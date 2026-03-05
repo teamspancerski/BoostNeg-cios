@@ -45,3 +45,7 @@ Thumbs.db
 node_modules/
 *.log
 .env
+
+# Next.js
+.next
+out
