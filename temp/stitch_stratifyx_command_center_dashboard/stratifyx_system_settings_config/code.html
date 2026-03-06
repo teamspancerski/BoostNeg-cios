@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "accent-blue": "#00f2ff",
+                        "accent-emerald": "#10b981",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#020617", // Slate 950
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-border {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow-red {
+            box-shadow: 0 0 10px rgba(242, 13, 13, 0.4);
+        }
+        input[type='range']::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #f20d0d;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(242, 13, 13, 0.6);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<!-- Header -->
+<div class="sticky top-0 z-50 flex items-center bg-background-dark/80 backdrop-blur-md p-4 border-b border-white/10 justify-between">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-white/5 glass-border">
+<span class="material-symbols-outlined text-slate-100">arrow_back</span>
+</div>
+<div class="flex flex-col items-center">
+<h2 class="text-slate-100 text-sm font-mono font-bold leading-tight tracking-wider uppercase">AJUSTES DO ORQUESTRADOR</h2>
+<span class="text-[10px] text-accent-blue font-mono">STRATIFYX v4.2.0-STABLE</span>
+</div>
+<div class="flex size-10 items-center justify-end">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/20 text-primary glass-border neon-glow-red">
+<span class="material-symbols-outlined">memory</span>
+</button>
+</div>
+</div>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto px-4 py-6 space-y-8">
+<!-- Modo de Operação -->
+<section>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-sm">settings_input_component</span>
+<h3 class="text-slate-100 text-xs font-mono font-bold leading-tight tracking-widest uppercase">MODO DE OPERAÇÃO</h3>
+</div>
+<div class="flex bg-slate-900/50 p-1.5 rounded-xl glass-border">
+<label class="flex cursor-pointer h-10 grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-slate-800 has-[:checked]:text-white text-slate-400 text-xs font-medium transition-all">
+<span class="truncate">Econômico</span>
+<input class="invisible w-0" name="op_mode" type="radio" value="Econômico"/>
+</label>
+<label class="flex cursor-pointer h-10 grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-slate-800 has-[:checked]:text-white text-slate-400 text-xs font-medium transition-all">
+<span class="truncate">Balanceado</span>
+<input class="invisible w-0" name="op_mode" type="radio" value="Balanceado"/>
+</label>
+<label class="flex cursor-pointer h-10 grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-primary has-[:checked]:text-white text-slate-400 text-xs font-bold transition-all neon-glow-red">
+<span class="truncate">Potência Máxima</span>
+<input checked="" class="invisible w-0" name="op_mode" type="radio" value="Potência Máxima"/>
+</label>
+</div>
+</section>
+<!-- Alocação de Recursos -->
+<section class="space-y-6">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-accent-blue text-sm">database</span>
+<h3 class="text-slate-100 text-xs font-mono font-bold leading-tight tracking-widest uppercase">ALOCAÇÃO DE RECURSOS</h3>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<div class="flex justify-between text-[11px] font-mono">
+<span class="text-slate-400">MEMÓRIA VRAM</span>
+<span class="text-accent-blue">48.5 GB / 64 GB</span>
+</div>
+<input class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-primary" type="range" value="75"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[11px] font-mono">
+<span class="text-slate-400">COTAS DE TOKENS (MENSAL)</span>
+<span class="text-accent-emerald">850M / 1.2B</span>
+</div>
+<input class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-primary" type="range" value="60"/>
+</div>
+</div>
+</section>
+<!-- Segurança e Compliance -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-accent-emerald text-sm">verified_user</span>
+<h3 class="text-slate-100 text-xs font-mono font-bold leading-tight tracking-widest uppercase">SEGURANÇA E COMPLIANCE</h3>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-4 bg-white/5 rounded-xl glass-border">
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-100">Criptografia Ponta-a-Ponta</span>
+<span class="text-[10px] text-slate-500 font-mono">AES-256-GCM Ativo</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-emerald"></div>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-white/5 rounded-xl glass-border">
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-100">Logs de Auditoria SAP</span>
+<span class="text-[10px] text-slate-500 font-mono">Sincronização em tempo real</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-emerald"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Limite de Agentes -->
+<section>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-slate-400 text-sm">smart_toy</span>
+<h3 class="text-slate-100 text-xs font-mono font-bold leading-tight tracking-widest uppercase">LIMITE DE AGENTES ATIVOS</h3>
+</div>
+<div class="flex items-center justify-between p-4 bg-slate-900/80 rounded-xl glass-border">
+<button class="size-10 flex items-center justify-center rounded-lg bg-white/5 glass-border active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-slate-100">remove</span>
+</button>
+<div class="flex flex-col items-center">
+<span class="text-3xl font-mono font-bold text-white leading-none">250</span>
+<span class="text-[9px] text-slate-500 font-mono mt-1">CAPACIDADE MÁXIMA</span>
+</div>
+<button class="size-10 flex items-center justify-center rounded-lg bg-white/5 glass-border active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-slate-100">add</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex border-t border-white/10 bg-background-dark/90 backdrop-blur-xl px-4 pb-6 pt-3">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-medium uppercase tracking-tighter">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<p class="text-[10px] font-medium uppercase tracking-tighter">Agentes</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">settings</span>
+<p class="text-[10px] font-medium uppercase tracking-tighter">Ajustes</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<p class="text-[10px] font-medium uppercase tracking-tighter">Logs</p>
+</a>
+</nav>
+</div>
+</body></html>

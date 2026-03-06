@@ -1,0 +1,243 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df269",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#020617", // Slate 950
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .donut-segment {
+            transition: stroke-dasharray 0.3s ease;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md border-b border-slate-800 px-4 py-4 flex items-center justify-between">
+<button class="flex items-center justify-center p-2 rounded-lg hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-400">arrow_back_ios</span>
+</button>
+<div class="flex flex-col items-center">
+<h1 class="text-[10px] font-bold tracking-widest text-primary uppercase">BoostNegócios IA</h1>
+<h2 class="text-sm font-bold tracking-tight text-slate-100">VISÃO GERAL POR DEPARTAMENTO</h2>
+</div>
+<button class="flex items-center justify-center p-2 rounded-lg hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-400">search</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Total Savings Card -->
+<div class="p-4">
+<div class="bg-primary/10 border border-primary/20 rounded-xl p-5 flex items-center justify-between">
+<div>
+<p class="text-xs font-medium text-primary/80 uppercase tracking-wider">Economia Total Acumulada</p>
+<p class="text-3xl font-mono font-bold text-primary mt-1">R$ 1.284.500</p>
+</div>
+<div class="bg-primary/20 p-3 rounded-full">
+<span class="material-symbols-outlined text-primary text-3xl">account_balance_wallet</span>
+</div>
+</div>
+</div>
+<!-- Heatmap Section -->
+<section class="px-4 mb-6">
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest">MAPA DE CALOR DE EFICIÊNCIA</h3>
+<span class="text-[10px] font-mono text-primary bg-primary/10 px-2 py-0.5 rounded">LIVE DATA</span>
+</div>
+<div class="grid grid-cols-5 gap-2 h-16">
+<!-- Vendas (Vibrant Emerald) -->
+<div class="bg-emerald-500 rounded-lg flex items-center justify-center shadow-lg shadow-emerald-500/20">
+<span class="text-[10px] font-bold text-slate-900">VND</span>
+</div>
+<!-- Logística (Deep Blueish Emerald) -->
+<div class="bg-emerald-700 rounded-lg flex items-center justify-center">
+<span class="text-[10px] font-bold text-slate-100">LOG</span>
+</div>
+<!-- Jurídico (Deep Blue) -->
+<div class="bg-slate-800 border border-slate-700 rounded-lg flex items-center justify-center">
+<span class="text-[10px] font-bold text-slate-400">JUR</span>
+</div>
+<!-- RH (Emerald 600) -->
+<div class="bg-emerald-600 rounded-lg flex items-center justify-center">
+<span class="text-[10px] font-bold text-slate-100">RH</span>
+</div>
+<!-- TI (Vibrant Emerald) -->
+<div class="bg-emerald-400 rounded-lg flex items-center justify-center shadow-lg shadow-emerald-400/20">
+<span class="text-[10px] font-bold text-slate-900 font-mono">TI</span>
+</div>
+</div>
+</section>
+<!-- Department ROI List -->
+<section class="px-4 space-y-4">
+<h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">DESEMPENHO POR SETOR</h3>
+<!-- Vendas Card -->
+<div class="glass-card rounded-xl p-4 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-lg font-bold text-slate-100">Vendas</h4>
+<p class="text-primary font-mono text-xl font-bold">+240.8% ROI</p>
+</div>
+<!-- Donut Chart -->
+<div class="relative size-14">
+<svg class="size-full -rotate-90" viewbox="0 0 36 36">
+<circle class="stroke-slate-800" cx="18" cy="18" fill="none" r="16" stroke-width="3"></circle>
+<circle class="stroke-primary" cx="18" cy="18" fill="none" r="16" stroke-dasharray="85 100" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-[10px] font-mono font-bold">85%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-3 border-t border-slate-800">
+<div class="size-8 rounded-full bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">smart_toy</span>
+</div>
+<div class="flex-1">
+<p class="text-[10px] text-slate-400 uppercase font-bold">Top Agente</p>
+<p class="text-xs font-medium text-slate-200">LeadGen Pro V4</p>
+</div>
+<span class="material-symbols-outlined text-slate-600">chevron_right</span>
+</div>
+</div>
+<!-- TI Card -->
+<div class="glass-card rounded-xl p-4 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-lg font-bold text-slate-100">TI &amp; Dev</h4>
+<p class="text-primary font-mono text-xl font-bold">+186.2% ROI</p>
+</div>
+<!-- Donut Chart -->
+<div class="relative size-14">
+<svg class="size-full -rotate-90" viewbox="0 0 36 36">
+<circle class="stroke-slate-800" cx="18" cy="18" fill="none" r="16" stroke-width="3"></circle>
+<circle class="stroke-primary" cx="18" cy="18" fill="none" r="16" stroke-dasharray="72 100" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-[10px] font-mono font-bold">72%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-3 border-t border-slate-800">
+<div class="size-8 rounded-full bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">terminal</span>
+</div>
+<div class="flex-1">
+<p class="text-[10px] text-slate-400 uppercase font-bold">Top Agente</p>
+<p class="text-xs font-medium text-slate-200">DevOps Automator</p>
+</div>
+<span class="material-symbols-outlined text-slate-600">chevron_right</span>
+</div>
+</div>
+<!-- Logística Card -->
+<div class="glass-card rounded-xl p-4 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-lg font-bold text-slate-100">Logística</h4>
+<p class="text-primary font-mono text-xl font-bold">+94.5% ROI</p>
+</div>
+<!-- Donut Chart -->
+<div class="relative size-14">
+<svg class="size-full -rotate-90" viewbox="0 0 36 36">
+<circle class="stroke-slate-800" cx="18" cy="18" fill="none" r="16" stroke-width="3"></circle>
+<circle class="stroke-primary" cx="18" cy="18" fill="none" r="16" stroke-dasharray="45 100" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-[10px] font-mono font-bold">45%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-3 border-t border-slate-800">
+<div class="size-8 rounded-full bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">local_shipping</span>
+</div>
+<div class="flex-1">
+<p class="text-[10px] text-slate-400 uppercase font-bold">Top Agente</p>
+<p class="text-xs font-medium text-slate-200">RouteOptimizer AI</p>
+</div>
+<span class="material-symbols-outlined text-slate-600">chevron_right</span>
+</div>
+</div>
+<!-- Jurídico Card -->
+<div class="glass-card rounded-xl p-4 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-lg font-bold text-slate-100">Jurídico</h4>
+<p class="text-primary font-mono text-xl font-bold">+112.4% ROI</p>
+</div>
+<!-- Donut Chart -->
+<div class="relative size-14">
+<svg class="size-full -rotate-90" viewbox="0 0 36 36">
+<circle class="stroke-slate-800" cx="18" cy="18" fill="none" r="16" stroke-width="3"></circle>
+<circle class="stroke-primary" cx="18" cy="18" fill="none" r="16" stroke-dasharray="60 100" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-[10px] font-mono font-bold">60%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-3 border-t border-slate-800">
+<div class="size-8 rounded-full bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">gavel</span>
+</div>
+<div class="flex-1">
+<p class="text-[10px] text-slate-400 uppercase font-bold">Top Agente</p>
+<p class="text-xs font-medium text-slate-200">ContractAnalyzer X</p>
+</div>
+<span class="material-symbols-outlined text-slate-600">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full bg-slate-900/90 backdrop-blur-lg border-t border-slate-800 pb-8 pt-2">
+<div class="flex justify-around items-center px-2">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-[1]">dashboard</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter">Dashboard</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">bolt</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter">Ações</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter">Agentes</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter">Mercado</p>
+</a>
+</div>
+</nav>
+
+```</body></html>

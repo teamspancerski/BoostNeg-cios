@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StratifyX Voice Command Interface</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "emerald-vibrant": "#10b981",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#020617", // Slate 950
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .sphere-gradient {
+            background: radial-gradient(circle at center, #0d59f2 0%, #10b981 100%);
+            filter: blur(40px);
+            opacity: 0.6;
+        }
+        .particle-bg {
+            background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<div class="relative flex flex-col h-screen w-full overflow-hidden bg-background-dark particle-bg">
+<!-- Header -->
+<header class="flex items-center justify-between p-6 z-20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">hub</span>
+<h1 class="text-sm font-semibold tracking-widest uppercase opacity-80">StratifyX</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full glass-panel hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-slate-100">settings</span>
+</button>
+</header>
+<!-- Technical Corner Info (Top Left) -->
+<div class="absolute top-24 left-6 z-20 font-mono text-[10px] text-primary/70 space-y-1">
+<p>DECIBEL: 45DB</p>
+<p>STATUS: CONECTADO</p>
+<p>FREQ: 44.1KHZ</p>
+</div>
+<!-- Technical Corner Info (Top Right) -->
+<div class="absolute top-24 right-6 z-20 font-mono text-[10px] text-emerald-vibrant/70 text-right space-y-1">
+<p>LATENCY: 12MS</p>
+<p>AGENTS: 254 ACTIVE</p>
+<p>ENCRYPTION: AES-256</p>
+</div>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col items-center justify-center px-8 relative z-10">
+<div class="mb-12 text-center">
+<h2 class="text-xs font-light tracking-[0.4em] text-primary mb-2">ESCUTANDO...</h2>
+<div class="h-[2px] w-8 bg-primary mx-auto opacity-50"></div>
+</div>
+<!-- Central Spherical Waveform Visualization -->
+<div class="relative w-64 h-64 flex items-center justify-center">
+<!-- Outer Glows -->
+<div class="absolute inset-0 sphere-gradient rounded-full"></div>
+<!-- Core Sphere -->
+<div class="relative w-48 h-48 rounded-full border border-white/20 flex items-center justify-center overflow-hidden glass-panel">
+<div class="w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-80"></div>
+<div class="absolute w-full h-1 bg-gradient-to-r from-transparent via-emerald-vibrant to-transparent opacity-40 rotate-45"></div>
+<div class="absolute w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-40 -rotate-45"></div>
+</div>
+<!-- Abstract 3D pulse representation (static visual) -->
+<div class="absolute inset-0 border-[0.5px] border-primary/20 rounded-full scale-110"></div>
+<div class="absolute inset-0 border-[0.5px] border-emerald-vibrant/10 rounded-full scale-125"></div>
+</div>
+<!-- Transcription Area -->
+<div class="mt-16 max-w-sm text-center">
+<p class="text-xl font-light leading-relaxed text-slate-100/90 italic">
+                    "Rosie, analise os tickets de suporte da última hora e gere um relatório de sentimento..."
+                </p>
+</div>
+</main>
+<!-- Command Suggestions -->
+<footer class="pb-12 px-6 z-20">
+<div class="flex flex-col items-center">
+<h3 class="text-[10px] font-bold tracking-[0.2em] text-slate-500 mb-6 uppercase">Sugestões de Comando</h3>
+<div class="flex flex-wrap justify-center gap-3">
+<button class="px-5 py-3 rounded-full glass-panel text-xs font-medium text-slate-300 hover:text-white hover:border-primary/50 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">analytics</span>
+                        ISA, otimizar logística
+                    </button>
+<button class="px-5 py-3 rounded-full glass-panel text-xs font-medium text-slate-300 hover:text-white hover:border-primary/50 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-emerald-vibrant">psychology</span>
+                        Luma, diagnóstico de RH
+                    </button>
+<button class="px-5 py-3 rounded-full glass-panel text-xs font-medium text-slate-300 hover:text-white hover:border-primary/50 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">payments</span>
+                        Fin, balanço projetado
+                    </button>
+</div>
+</div>
+</footer>
+<!-- Background Element - Abstract Gradient Overlay -->
+<div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none"></div>
+<!-- Decorative UI Elements -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/20 rounded-full"></div>
+</div>
+<!-- Background Images as per requirements -->
+<div class="hidden">
+<img data-alt="Abstract blue and emerald neon sphere glowing in deep space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd-JvOFEp82o13zKTy6wYSdZkp30N7UET9c1EHbLUKJ6rZm4Anqz5cY-j6lvpgXI-YFQea5BdhuBucboKqCQTnKGHtJJOY82nK7F7NeX18TndKM5Rfa5dSeoZg6d_ztj187XAUPFAUsQC9Kc6GJm__oeUA6mIoA8SrLvCmb8gK8lZnXk_QzZtHklRyH4Za73b3Ge2SG8RYOSyTOOy4wAl7l4sSTmBiOUmGynxVJsNC2lm1Q8oCvwufnwifpusmt6b_lTg5tF1pEuY"/>
+<img data-alt="Subtle particle field with light dots moving towards center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdcNaZ2elw-IppNkDZgxGERIxyvpQH4ZyE9wYkhR2h2M1W0QT9-m2P6veajF8bsapZNhiGf8o_jqAAQ3oi9cgzMqI6kjVVjybvuMfuXMj8T7Hf9LS3wcIHAgTTXmgeWedhbSvrEy1dZMTmz8O9D4di4tM8s6zQAqiBmpyRGo6fS5vO_3o8WOUOAYocy8j3cUiAN-INR6SLFjxi2hgWw0l6c6YQ6BHAfj9jHAZfH_y4h2JGWa1ctyFP1ghJ5Rwf_xav-eAO8xSxSck"/>
+</div>
+</body></html>

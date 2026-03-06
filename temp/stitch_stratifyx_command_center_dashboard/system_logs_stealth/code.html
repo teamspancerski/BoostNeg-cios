@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>System Orchestrator - Stealth Mode</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3abff8",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101d23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .crt-overlay {
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+        .stealth-gradient {
+            background: linear-gradient(180deg, rgba(16, 29, 35, 0) 0%, rgba(16, 29, 35, 1) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col relative overflow-hidden">
+<div class="fixed inset-0 crt-overlay z-50 opacity-20"></div>
+<header class="flex items-center justify-between px-6 py-4 border-b border-slate-800/50 bg-background-dark/80 backdrop-blur-md sticky top-0 z-40">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-primary/10 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-2xl">terminal</span>
+</div>
+<div>
+<h1 class="text-sm font-bold tracking-widest uppercase text-slate-400">System Orchestrator</h1>
+<div class="flex items-center gap-2">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-mono text-primary/80 uppercase tracking-tighter">Stealth Mode: Active</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex flex-col items-end px-4 border-r border-slate-800">
+<span class="text-[10px] uppercase text-slate-500 font-bold">Uptime</span>
+<span class="text-xs font-mono text-slate-300">142:12:08:44</span>
+</div>
+<button class="size-10 flex items-center justify-center rounded-full hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-400">power_settings_new</span>
+</button>
+</div>
+</header>
+<nav class="flex border-b border-slate-800/50 bg-background-dark/40 px-6">
+<a class="flex items-center gap-2 px-4 py-3 border-b-2 border-primary text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">list_alt</span>
+<span class="text-xs font-bold uppercase tracking-wider">Logs</span>
+</a>
+<a class="flex items-center gap-2 px-4 py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-300 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">memory</span>
+<span class="text-xs font-bold uppercase tracking-wider">Processes</span>
+</a>
+<a class="flex items-center gap-2 px-4 py-3 border-b-2 border-transparent text-slate-500 hover:text-slate-300 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">lan</span>
+<span class="text-xs font-bold uppercase tracking-wider">Network</span>
+</a>
+</nav>
+<main class="flex-1 flex flex-col p-4 md:p-6 gap-4 overflow-hidden relative">
+<div class="flex flex-col md:flex-row gap-4 items-center mb-2">
+<div class="relative flex-1 w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-xl">search</span>
+<input class="w-full bg-slate-900/50 border border-slate-800 rounded-lg pl-10 pr-4 py-2 text-sm font-mono text-primary placeholder:text-slate-600 focus:ring-1 focus:ring-primary/50 focus:border-primary outline-none transition-all" placeholder="grep -i 'error' --context 5" type="text"/>
+</div>
+<div class="flex gap-2 w-full md:w-auto">
+<button class="flex-1 md:flex-none px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-xs font-bold uppercase tracking-tighter text-slate-300 flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filter
+                </button>
+<button class="flex-1 md:flex-none px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-xs font-bold uppercase tracking-tighter text-slate-300 flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-sm">download</span> Export
+                </button>
+</div>
+</div>
+<div class="flex-1 bg-black/40 border border-slate-800/60 rounded-xl overflow-y-auto p-4 font-mono text-sm leading-relaxed custom-scrollbar">
+<div class="space-y-1">
+<div class="flex gap-4 group hover:bg-primary/5 p-1 rounded transition-colors">
+<span class="text-slate-600 shrink-0 select-none">14:22:01</span>
+<span class="text-primary/60 shrink-0 font-bold">[SYSTEM]</span>
+<span class="text-slate-300">Initializing Node.js v20.8.0 environment...</span>
+</div>
+<div class="flex gap-4 group hover:bg-primary/5 p-1 rounded transition-colors">
+<span class="text-slate-600 shrink-0 select-none">14:22:02</span>
+<span class="text-emerald-500/60 shrink-0 font-bold">[INFO]</span>
+<span class="text-slate-300">Memory isolation layer established. (PID: 84291)</span>
+</div>
+<div class="flex gap-4 group hover:bg-primary/5 p-1 rounded transition-colors">
+<span class="text-slate-600 shrink-0 select-none">14:22:05</span>
+<span class="text-primary/60 shrink-0 font-bold">[TS]</span>
+<span class="text-slate-300">Starting compilation of <span class="text-primary/80">src/orchestrator.ts</span></span>
+</div>
+<div class="flex gap-4 group hover:bg-primary/5 p-1 rounded transition-colors">
+<span class="text-slate-600 shrink-0 select-none">14:22:12</span>
+<span class="text-primary/60 shrink-0 font-bold">[TS]</span>
+<span class="text-slate-300">Compilation finished in <span class="text-amber-500/80">7.2s</span>. No errors found.</span>
+</div>
+<div class="flex gap-4 group hover:bg-primary/5 p-1 rounded transition-colors">
+<span class="text-slate-600 shrink-0 select-none">14:22:13</span>
+<span class="text-emerald-500/60 shrink-0 font-bold">[INFO]</span>
+<span class="text-slate-300">Primary cluster worker #1 spawned successfully.</span>
+</div>
+<div class="flex gap-4 group hover:bg-primary/5 p-1 rounded transition-colors">
+<span class="text-slate-600 shrink-0 select-none">14:23:45</span>
+<span class="text-primary/60 shrink-0 font-bold">[NETWORK]</span>
+<span class="text-slate-300">Handshake complete with remote node: <span class="text-primary/80">dark-net-04</span></span>
+</div>
+<div class="flex gap-4 group hover:bg-primary/5 p-1 rounded transition-colors">
+<span class="text-slate-600 shrink-0 select-none">14:25:01</span>
+<span class="text-amber-500/60 shrink-0 font-bold">[WARN]</span>
+<span class="text-slate-300">Latency spike detected in <span class="text-primary/80">us-east-1</span> (142ms)</span>
+</div>
+<div class="flex gap-4 group hover:bg-primary/5 p-1 rounded transition-colors">
+<span class="text-slate-600 shrink-0 select-none">14:25:04</span>
+<span class="text-primary/60 shrink-0 font-bold">[DEBUG]</span>
+<span class="text-slate-500 italic">GC cycle started. Heap: 42.4MB / 128MB</span>
+</div>
+<div class="flex gap-4 group hover:bg-primary/5 p-1 rounded transition-colors">
+<span class="text-slate-600 shrink-0 select-none">14:26:12</span>
+<span class="text-emerald-500/60 shrink-0 font-bold">[INFO]</span>
+<span class="text-slate-300">Ingress controller ready. Listening on port 443.</span>
+</div>
+<div class="flex gap-4 group hover:bg-primary/5 p-1 rounded transition-colors">
+<span class="text-slate-600 shrink-0 select-none">14:27:00</span>
+<span class="text-rose-500/80 shrink-0 font-bold">[ERROR]</span>
+<span class="text-rose-400">Failed to mount ephemeral volume /tmp/secure_buffer: Read-only file system</span>
+</div>
+<div class="flex gap-4 group hover:bg-primary/5 p-1 rounded transition-colors">
+<span class="text-slate-600 shrink-0 select-none">14:27:01</span>
+<span class="text-emerald-500/60 shrink-0 font-bold">[INFO]</span>
+<span class="text-slate-300">Retry logic engaged. Attempting fallback to /var/lib/orchestrator/tmp...</span>
+</div>
+<div class="flex gap-4 group hover:bg-primary/5 p-1 rounded transition-colors">
+<span class="text-slate-600 shrink-0 select-none">14:27:02</span>
+<span class="text-emerald-500/60 shrink-0 font-bold">[SUCCESS]</span>
+<span class="text-slate-300">Fallback mount successful. Resuming operation.</span>
+</div>
+<div class="flex gap-4 group hover:bg-primary/5 p-1 rounded transition-colors">
+<span class="text-slate-600 shrink-0 select-none">14:28:15</span>
+<span class="text-primary/60 shrink-0 font-bold">[METRICS]</span>
+<span class="text-slate-300">CPU: 0.2% | MEM: 46.1MB | CONN: 1,402</span>
+</div>
+<div class="flex gap-4 group hover:bg-primary/5 p-1 rounded transition-colors">
+<span class="text-slate-600 shrink-0 select-none">14:30:00</span>
+<span class="text-primary/60 shrink-0 font-bold">[SYSTEM]</span>
+<span class="text-slate-300">Snapshot created. Hash: 0x8f2b...c91e</span>
+</div>
+<div class="flex gap-4 group hover:bg-primary/5 p-1 rounded transition-colors bg-primary/10 border-l-2 border-primary">
+<span class="text-primary shrink-0 select-none">14:32:01</span>
+<span class="text-primary shrink-0 font-bold underline">[LIVE]</span>
+<span class="text-slate-100 flex items-center gap-1">
+                        System heart-beat stable <span class="animate-pulse">_</span>
+</span>
+</div>
+</div>
+</div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-full max-w-lg px-6 pointer-events-none">
+<div class="bg-background-dark/90 border border-slate-700/50 rounded-full px-6 py-2 shadow-2xl flex items-center justify-between backdrop-blur-md pointer-events-auto">
+<div class="flex items-center gap-3">
+<div class="size-2 bg-primary rounded-full shadow-[0_0_8px_rgba(58,191,248,0.8)]"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Stream Live</span>
+</div>
+<div class="flex items-center gap-4 border-l border-slate-800 ml-4 pl-4">
+<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors cursor-pointer">play_arrow</button>
+<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors cursor-pointer">pause</button>
+<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors cursor-pointer">vertical_align_bottom</button>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-slate-900/80 border-t border-slate-800 px-4 pb-2 pt-2 z-40">
+<div class="flex gap-2">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 rounded-lg text-primary bg-primary/10 py-2" href="#">
+<span class="material-symbols-outlined fill-1">monitor</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">Terminal</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 hover:text-slate-300 py-2" href="#">
+<span class="material-symbols-outlined">hard_drive</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">Storage</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 hover:text-slate-300 py-2" href="#">
+<span class="material-symbols-outlined">shield</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">Security</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 hover:text-slate-300 py-2" href="#">
+<span class="material-symbols-outlined">settings_suggest</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">Config</span>
+</a>
+</div>
+</footer>
+</body></html>

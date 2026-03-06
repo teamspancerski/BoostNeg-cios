@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#3abff8",
+              "background-light": "#f5f7f8",
+              "background-dark": "#101d23",
+            },
+            fontFamily: {
+              "display": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<title>Stealth Mode Asset Preview</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<!-- Top Navigation -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between border-b border-slate-200 dark:border-slate-800">
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Stealth Generation Preview</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-primary gap-2 text-base font-bold p-0">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<!-- Dashboard Summary Bar -->
+<div class="grid grid-cols-3 gap-4 p-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-wider text-slate-500">Status</span>
+<span class="text-sm font-semibold text-primary flex items-center gap-1">
+<span class="size-2 bg-primary rounded-full animate-pulse"></span> Encrypted
+                </span>
+</div>
+<div class="flex flex-col border-x border-slate-200 dark:border-slate-800 px-4">
+<span class="text-[10px] uppercase tracking-wider text-slate-500">Model</span>
+<span class="text-sm font-semibold">Ghost-v2.4</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-[10px] uppercase tracking-wider text-slate-500">ROI Est.</span>
+<span class="text-sm font-semibold text-emerald-500">+14.2%</span>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="flex flex-col gap-6 p-4">
+<!-- ROI Charts Section -->
+<section>
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-bold uppercase tracking-widest">Performance Projections</h3>
+<span class="text-xs text-slate-500">Real-time simulation</span>
+</div>
+<div class="w-full h-48 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 relative overflow-hidden">
+<!-- Mock ROI Chart -->
+<div class="absolute inset-0 flex items-end justify-between px-6 pb-4 gap-2">
+<div class="w-full bg-primary/20 rounded-t-sm h-[30%]"></div>
+<div class="w-full bg-primary/30 rounded-t-sm h-[45%]"></div>
+<div class="w-full bg-primary/40 rounded-t-sm h-[35%]"></div>
+<div class="w-full bg-primary/50 rounded-t-sm h-[60%]"></div>
+<div class="w-full bg-primary/60 rounded-t-sm h-[55%]"></div>
+<div class="w-full bg-primary/80 rounded-t-sm h-[85%]"></div>
+<div class="w-full bg-primary rounded-t-sm h-[95%]"></div>
+</div>
+<div class="relative z-10 flex flex-col gap-1">
+<p class="text-2xl font-bold tracking-tighter">$42,084.12</p>
+<p class="text-xs text-slate-500">Projected Yield (30d)</p>
+</div>
+</div>
+</section>
+<!-- Visual Assets Horizontal Scroll -->
+<section>
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-bold uppercase tracking-widest">Generated Media</h3>
+<button class="text-xs text-primary font-medium">Regenerate All</button>
+</div>
+<div class="flex overflow-x-auto pb-2 gap-4 snap-x no-scrollbar">
+<div class="flex-none w-64 snap-start">
+<div class="relative aspect-square rounded-xl bg-slate-200 dark:bg-slate-800 overflow-hidden group">
+<img alt="Minimalist abstract dark structure" class="w-full h-full object-cover" data-alt="Abstract dark minimalist 3D structure with blue neon highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEfvKJOx0vy0i_qhT8lWIpT0uJ3p4Qfvpr-gy8e-8OK6WiM-BpGSbgbVKM1jzlwPfiU7kur9BW9Wow7BXrIV4wutvkbPO6yYXOA0SMaAqe2Sy3kdvNFyLFpeTJnHc5JpNCqsIj3NZERB1iqQ4okudyIa58lrb59PbLtEgMu6a_dtJS48EHC3J8b7dawPha6RZqilFbpgsDaKHD6xMT146ipt9NoTu0L4z6POWYsjK6d0dESx60zdhd60c5s0-oE71iis1XB96JPdY"/>
+<div class="absolute bottom-2 right-2 flex gap-1">
+<button class="size-8 rounded-lg bg-background-dark/80 text-white flex items-center justify-center backdrop-blur-md">
+<span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+</div>
+<div class="mt-2">
+<p class="text-sm font-medium">Ghost Construct A</p>
+<p class="text-xs text-slate-500">High-fidelity / 4K</p>
+</div>
+</div>
+<div class="flex-none w-64 snap-start">
+<div class="relative aspect-square rounded-xl bg-slate-200 dark:bg-slate-800 overflow-hidden group">
+<img alt="Abstract flowing blue lines on black" class="w-full h-full object-cover" data-alt="Abstract flowing digital waves in primary blue color" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyHw8gfFTp45QFXsYu_adqTpN4v-5oAd9Rq_yBBscHB--FYwpQ_0b5sdk9tB-W07qsmbK6tILhUH1abNf3TNV7Lbgz-cixUCMOQlMshqgfZC6YoFyPnsh9Btud6EmYaTto61w3oeIa9BHpS3W-mZhvEJ3vjGBZiH3nf3fH30Fw5PFI_ySN-6sQ837KGG8UIpD3pNAqizq_-ApF7kA52v9Qn8tWNdS8JApUCu5NhvcknuYtj4-MFrexMskBW4dRz4j7ZwgQoK4IGmw"/>
+<div class="absolute bottom-2 right-2 flex gap-1">
+<button class="size-8 rounded-lg bg-background-dark/80 text-white flex items-center justify-center backdrop-blur-md">
+<span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+</div>
+<div class="mt-2">
+<p class="text-sm font-medium">Digital Pulse B</p>
+<p class="text-xs text-slate-500">Liquid motion / 4K</p>
+</div>
+</div>
+<div class="flex-none w-64 snap-start">
+<div class="relative aspect-square rounded-xl bg-slate-200 dark:bg-slate-800 overflow-hidden group">
+<img alt="Satellite view of digital network" class="w-full h-full object-cover" data-alt="Global network nodes connecting over dark earth background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn1xrem3_Hy-97jWEGRvN6Zd5fM2M2jeX8Ne71kPvLGLv9FrDKkw5zxc2dsck6AbHdIEWWk6G9kMGJM0pasQEC0eE-h8E-xRjsjEYckRunCJP0nU9tZzqusvUsC60YrArtmhr03Gwesa6rPjxOPLxu6EQkAAtPHhKHCgTGwGVXEp70-LzV7ADm_kSXvcLQn0Pd6qMm1hhZXwSyk4QkklSditRZu_hW4Aw1ea8bHqZUBWeRbKzFO7BnIb6IIrvU7wZIDYszatXX6UI"/>
+<div class="absolute bottom-2 right-2 flex gap-1">
+<button class="size-8 rounded-lg bg-background-dark/80 text-white flex items-center justify-center backdrop-blur-md">
+<span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+</div>
+<div class="mt-2">
+<p class="text-sm font-medium">Global Stealth C</p>
+<p class="text-xs text-slate-500">Network view / 4K</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Ad Copy Section -->
+<section>
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-bold uppercase tracking-widest mb-3">Copy Variants</h3>
+<div class="flex flex-col gap-4">
+<div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/30">
+<div class="flex justify-between items-start mb-2">
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase">Variation 01</span>
+<span class="material-symbols-outlined text-slate-400 text-lg cursor-pointer">content_copy</span>
+</div>
+<p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed italic">
+                            "Silence is the ultimate weapon. Deploy our latest stealth-layer protocol and watch your efficiency scale without a single footprint."
+                        </p>
+<div class="mt-4 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+<span>Score: 9.8/10</span>
+<button class="text-primary font-bold">Edit</button>
+</div>
+</div>
+<div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/30">
+<div class="flex justify-between items-start mb-2">
+<span class="px-2 py-0.5 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-500 text-[10px] font-bold uppercase">Variation 02</span>
+<span class="material-symbols-outlined text-slate-400 text-lg cursor-pointer">content_copy</span>
+</div>
+<p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                            "Infrastructure that thinks for you, while remaining invisible. The next generation of asset management is here."
+                        </p>
+<div class="mt-4 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+<span>Score: 8.4/10</span>
+<button class="text-primary font-bold">Edit</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sticky Footer Action -->
+<div class="sticky bottom-0 w-full p-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800">
+<button class="w-full h-14 bg-primary text-background-dark rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span>Finalize &amp; Deploy Campaign</span>
+<span class="material-symbols-outlined">rocket_launch</span>
+</button>
+</div>
+<div class="h-4"></div>
+</div>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

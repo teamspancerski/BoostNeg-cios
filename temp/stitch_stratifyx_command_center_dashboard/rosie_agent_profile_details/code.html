@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d6cf2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#020617", // Slate 950
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(13, 108, 242, 0.2);
+        }
+        .emerald-glow {
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .status-pulse {
+            box-shadow: 0 0 0 0 rgba(13, 108, 242, 0.7);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(13, 108, 242, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(13, 108, 242, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(13, 108, 242, 0); }
+        }
+        .data-grid {
+            background-image: radial-gradient(circle, rgba(13, 108, 242, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col data-grid">
+<!-- Header -->
+<header class="sticky top-0 z-50 glass-panel border-b border-slate-800/50 px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">arrow_back_ios</span>
+<h1 class="text-sm font-bold tracking-widest uppercase text-slate-200">Rosie - Suporte Especializado</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800/50">
+<span class="material-symbols-outlined text-slate-300">more_horiz</span>
+</button>
+</header>
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Profile Hero -->
+<section class="flex flex-col items-center pt-8 pb-6 px-4">
+<div class="relative">
+<div class="w-32 h-32 rounded-full overflow-hidden border-2 border-primary/50 status-pulse" data-alt="Futuristic AI female cyborg portrait with blue neon accents" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCsx_1m3IoBxJ7beZZs5Opj2D6OPCUOIRDHeYPs_gwqVkfY-yxEV-fPskfE_VTAVVf0p3l04WHIIE2ysbx_RqidLH96Np3RaMJjPktMLfUhdEHdAarWfJLzOp-T8yRo_yCUfbZwKXB9qzNVR3nY4lhAoAjqfeaLlXrTlTHA_KmJ3Xsa52Nt-sUtamKgs0jSvc6H6F44n6WWvvOCEIAjJJWI6PkcnDWuEddUFIhNlGXo7nPFrP_J8mmDS4jnciprfC0DmYIdhGdTeU'); background-size: cover;">
+</div>
+<div class="absolute bottom-1 right-1 w-6 h-6 bg-emerald-500 border-4 border-background-dark rounded-full"></div>
+</div>
+<div class="mt-4 text-center">
+<h2 class="text-2xl font-bold tracking-tight">Rosie (Suporte)</h2>
+<div class="mt-2 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-bold tracking-widest uppercase text-primary">Status: Online / Processando</span>
+</div>
+<p class="mt-2 text-slate-400 text-xs">Ativo continuamente há 24 dias, 14h</p>
+</div>
+</section>
+<!-- Metrics Cards -->
+<section class="px-4 grid grid-cols-2 gap-3">
+<div class="glass-panel rounded-xl p-4 emerald-glow">
+<p class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">CSAT Médio</p>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="text-2xl font-bold">98.5%</span>
+<span class="material-symbols-outlined text-emerald-500 text-sm">trending_up</span>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-4">
+<p class="text-[10px] font-bold text-primary uppercase tracking-wider">Latência</p>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="text-2xl font-bold">45ms</span>
+<span class="text-[10px] text-slate-500">avg</span>
+</div>
+</div>
+</section>
+<!-- Capacidades Section -->
+<section class="mt-8 px-4">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-xs font-bold uppercase tracking-widest text-slate-400">Capacidades</h3>
+<span class="text-[10px] text-primary">v4.2.0-stable</span>
+</div>
+<div class="space-y-4">
+<div class="glass-panel rounded-xl p-4">
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium">Sentiment Analysis</span>
+<span class="text-xs font-mono text-primary">92%</span>
+</div>
+<div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-4">
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium">Multi-channel Ticket Resolution</span>
+<span class="text-xs font-mono text-primary">88%</span>
+</div>
+<div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-4">
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium">CRM Integration</span>
+<span class="text-xs font-mono text-primary">100%</span>
+</div>
+<div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Activity Logs -->
+<section class="mt-8 px-4">
+<h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Logs de Atividade Recente</h3>
+<div class="bg-slate-900/80 rounded-xl border border-slate-800 p-3 font-mono text-[11px] leading-relaxed max-h-48 overflow-y-auto">
+<div class="flex gap-2 text-slate-500 mb-1">
+<span>[14:22:01]</span>
+<span class="text-emerald-400">SUCCESS</span>
+<span class="text-slate-300">Ticket #902 resolved in 1.2s</span>
+</div>
+<div class="flex gap-2 text-slate-500 mb-1">
+<span>[14:21:58]</span>
+<span class="text-primary">INFO</span>
+<span class="text-slate-300">Sentiment score: 0.89 (Positive)</span>
+</div>
+<div class="flex gap-2 text-slate-500 mb-1">
+<span>[14:21:55]</span>
+<span class="text-primary">INFO</span>
+<span class="text-slate-300">Syncing CRM record @uid_882...</span>
+</div>
+<div class="flex gap-2 text-slate-500 mb-1">
+<span>[14:20:12]</span>
+<span class="text-emerald-400">SUCCESS</span>
+<span class="text-slate-300">Multimodal parsing completed.</span>
+</div>
+<div class="flex gap-2 text-slate-500 mb-1">
+<span>[14:19:44]</span>
+<span class="text-yellow-500">WARN</span>
+<span class="text-slate-400">Retrying connection to Node_Delta...</span>
+</div>
+<div class="flex gap-2 text-slate-500">
+<span>[14:18:30]</span>
+<span class="text-primary">INFO</span>
+<span class="text-slate-300">Agent Rosie initialized session.</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 glass-panel border-t border-slate-800/80 px-6 py-3 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">smart_toy</span>
+<span class="text-[10px] font-medium">Agentes</span>
+</a>
+<div class="relative -top-6">
+<button class="w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/20 border-4 border-background-dark">
+<span class="material-symbols-outlined text-white text-3xl">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="text-[10px] font-medium">Logs</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Ajustes</span>
+</a>
+</nav>
+</body></html>

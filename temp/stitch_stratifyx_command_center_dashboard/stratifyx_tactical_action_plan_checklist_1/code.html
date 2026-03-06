@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StratifyX Tactical Action Plan Checklist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#07b6d5",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2023",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-card {
+            background: rgba(24, 48, 52, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(48, 96, 105, 0.3);
+        }
+        .pulse-blue {
+            box-shadow: 0 0 0 0 rgba(7, 182, 213, 0.7);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(7, 182, 213, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(7, 182, 213, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(7, 182, 213, 0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Area -->
+<header class="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md border-b border-primary/20 p-4">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">arrow_back_ios</span>
+<h1 class="text-lg font-bold tracking-tight uppercase">Plano de Ação Tático</h1>
+</div>
+<button class="p-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="text-xl font-bold text-white leading-none">Orquestrado — StratifyX</h2>
+<p class="text-xs font-mono text-primary/70 uppercase tracking-widest">BoostNegócios IA / V.2.4.0</p>
+</div>
+</header>
+<!-- Navigation Tabs -->
+<nav class="flex border-b border-primary/10 bg-background-dark px-4 overflow-x-auto no-scrollbar">
+<button class="px-4 py-3 border-b-2 border-transparent text-slate-400 text-xs font-bold whitespace-nowrap">
+            PENDENTE
+        </button>
+<button class="px-4 py-3 border-b-2 border-primary text-primary text-xs font-bold whitespace-nowrap">
+            EM EXECUÇÃO
+        </button>
+<button class="px-4 py-3 border-b-2 border-transparent text-slate-400 text-xs font-bold whitespace-nowrap">
+            CONCLUÍDO
+        </button>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 p-4 space-y-4 overflow-y-auto">
+<!-- Task 1: Otimização SAP -->
+<div class="glass-card rounded-xl p-4 relative overflow-hidden group">
+<div class="flex items-start justify-between gap-3">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-mono text-[10px] text-primary/60">#TASK-0492</span>
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-primary/20 text-primary uppercase">Em Execução</span>
+</div>
+<h3 class="text-base font-semibold text-white leading-tight">Otimização de Fluxo SAP</h3>
+<p class="text-sm text-slate-400 mt-1">Agente: <span class="text-primary font-medium">ISA</span></p>
+</div>
+<div class="flex items-center justify-center">
+<div class="w-8 h-8 rounded-full border-2 border-primary flex items-center justify-center pulse-blue">
+<span class="material-symbols-outlined text-primary text-sm">sync</span>
+</div>
+</div>
+</div>
+<div class="mt-4 h-1 w-full bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[65%]"></div>
+</div>
+</div>
+<!-- Task 2: Reestruturação Logística -->
+<div class="glass-card rounded-xl p-4 border-l-4 border-l-emerald-500/50">
+<div class="flex items-start justify-between gap-3">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-mono text-[10px] text-slate-500">#TASK-0511</span>
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-500 uppercase">Concluído</span>
+</div>
+<h3 class="text-base font-semibold text-white/60 line-through leading-tight">Reestruturação Logística</h3>
+<p class="text-sm text-slate-500 mt-1">Agente: <span class="text-emerald-500 font-medium">Jhow</span></p>
+</div>
+<div class="flex items-center justify-center">
+<span class="material-symbols-outlined text-emerald-500 drop-shadow-[0_0_8px_rgba(16,185,129,0.5)]">check_circle</span>
+</div>
+</div>
+<div class="mt-3 flex gap-2">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border border-background-dark bg-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px]">person</span>
+</div>
+<div class="w-6 h-6 rounded-full border border-background-dark bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px]">smart_toy</span>
+</div>
+</div>
+<span class="text-[10px] text-slate-500 self-center">Finalizado em 14:30</span>
+</div>
+</div>
+<!-- Task 3: Script de Vendas -->
+<div class="glass-card rounded-xl p-4 border-l-4 border-l-slate-600">
+<div class="flex items-start justify-between gap-3">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-mono text-[10px] text-slate-400">#TASK-0604</span>
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-slate-700 text-slate-300 uppercase">Pendente</span>
+</div>
+<h3 class="text-base font-semibold text-white leading-tight">Script de Vendas V2</h3>
+<p class="text-sm text-slate-400 mt-1">Agente: <span class="text-primary font-medium">Auto-Aura</span></p>
+</div>
+<button class="bg-primary/10 hover:bg-primary/20 p-2 rounded-lg transition-all">
+<span class="material-symbols-outlined text-primary">download</span>
+</button>
+</div>
+</div>
+<!-- Gantt Timeline Sidebar (Inline for Mobile) -->
+<section class="mt-8">
+<div class="flex items-center justify-between mb-3 px-2">
+<h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Cronograma Estimado</h4>
+<span class="text-[10px] font-mono text-emerald-400">STATUS: NOMINAL</span>
+</div>
+<div class="glass-card rounded-xl p-4 overflow-hidden">
+<div class="space-y-4">
+<div class="grid grid-cols-6 gap-1 items-center">
+<div class="col-span-1 text-[10px] font-mono text-slate-500 uppercase">H1</div>
+<div class="col-span-5 h-2 bg-slate-800 rounded-full relative">
+<div class="absolute inset-y-0 left-0 w-3/4 bg-emerald-500/80 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.4)]"></div>
+</div>
+</div>
+<div class="grid grid-cols-6 gap-1 items-center">
+<div class="col-span-1 text-[10px] font-mono text-slate-500 uppercase">H2</div>
+<div class="col-span-5 h-2 bg-slate-800 rounded-full relative">
+<div class="absolute inset-y-0 left-[20%] w-[60%] bg-emerald-500/40 rounded-full"></div>
+</div>
+</div>
+<div class="grid grid-cols-6 gap-1 items-center">
+<div class="col-span-1 text-[10px] font-mono text-slate-500 uppercase">H3</div>
+<div class="col-span-5 h-2 bg-slate-800 rounded-full relative">
+<div class="absolute inset-y-0 left-[70%] w-[10%] bg-slate-600 rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-primary/10 flex justify-between items-center">
+<p class="text-[10px] text-slate-500 italic">Previsão de conclusão: 18:45 (Hoje)</p>
+<span class="material-symbols-outlined text-emerald-400 text-sm">schedule</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<footer class="mt-auto border-t border-primary/20 bg-background-dark px-4 pb-6 pt-2">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-[10px] font-medium uppercase tracking-tight">Dashboard</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">task_alt</span>
+<p class="text-[10px] font-medium uppercase tracking-tight">Ações</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<p class="text-[10px] font-medium uppercase tracking-tight">Agentes</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<p class="text-[10px] font-medium uppercase tracking-tight">Perfil</p>
+</a>
+</div>
+</footer>
+</body></html>

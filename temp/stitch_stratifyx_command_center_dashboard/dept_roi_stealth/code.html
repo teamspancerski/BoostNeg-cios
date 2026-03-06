@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stealth Mode - ROI Breakdown</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3abff8",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101d23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .donut-chart {
+            background: conic-gradient(from 0deg, #3abff8 0% 72%, #223d49 72% 100%);
+            border-radius: 50%;
+        }
+        .monochrome-gradient {
+            background: linear-gradient(180deg, rgba(58, 191, 248, 0.15) 0%, rgba(16, 29, 35, 0) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h1 class="text-slate-900 dark:text-slate-100 text-lg font-bold flex-1 text-center">Department ROI Breakdown</h1>
+<div class="flex size-10 items-center justify-end cursor-pointer">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">search</span>
+</div>
+</header>
+<!-- Navigation Tabs -->
+<nav class="bg-background-light dark:bg-background-dark px-4">
+<div class="flex border-b border-slate-200 dark:border-slate-800 gap-8">
+<a class="flex flex-col items-center justify-center border-b-2 border-primary text-primary pb-3 pt-4" href="#">
+<p class="text-sm font-bold">Overview</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-4" href="#">
+<p class="text-sm font-bold">Efficiency</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-4" href="#">
+<p class="text-sm font-bold">Sectors</p>
+</a>
+</div>
+</nav>
+<main class="flex-1 pb-24">
+<!-- Efficiency Heatmap Section -->
+<section class="p-4">
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold pb-4 pt-2">Efficiency Heatmap</h2>
+<div class="bg-slate-100 dark:bg-slate-800/50 rounded-xl p-6 border border-slate-200 dark:border-slate-800">
+<div class="flex justify-between items-end mb-8">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Efficiency by Department</p>
+<p class="text-slate-900 dark:text-slate-100 text-4xl font-bold tracking-tight mt-1">94.2%</p>
+</div>
+<div class="text-right">
+<span class="text-emerald-500 text-sm font-bold flex items-center justify-end">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span>
+                                +2.4%
+                            </span>
+<p class="text-slate-500 dark:text-slate-400 text-xs">vs last 30 days</p>
+</div>
+</div>
+<div class="grid grid-cols-5 gap-3 h-40 items-end">
+<div class="flex flex-col items-center gap-2 h-full justify-end">
+<div class="bg-primary/40 dark:bg-primary/30 w-full rounded-t-lg transition-all" style="height: 100%;"></div>
+<p class="text-slate-500 dark:text-slate-400 text-[11px] font-bold uppercase tracking-wider">Eng</p>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end">
+<div class="bg-primary/30 dark:bg-primary/20 w-full rounded-t-lg transition-all" style="height: 80%;"></div>
+<p class="text-slate-500 dark:text-slate-400 text-[11px] font-bold uppercase tracking-wider">Ops</p>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end">
+<div class="bg-primary/25 dark:bg-primary/15 w-full rounded-t-lg transition-all" style="height: 70%;"></div>
+<p class="text-slate-500 dark:text-slate-400 text-[11px] font-bold uppercase tracking-wider">Sales</p>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end">
+<div class="bg-primary/20 dark:bg-primary/10 w-full rounded-t-lg transition-all" style="height: 60%;"></div>
+<p class="text-slate-500 dark:text-slate-400 text-[11px] font-bold uppercase tracking-wider">HR</p>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end">
+<div class="bg-primary/10 dark:bg-primary/5 w-full rounded-t-lg transition-all" style="height: 30%;"></div>
+<p class="text-slate-500 dark:text-slate-400 text-[11px] font-bold uppercase tracking-wider">Mktg</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Utilization Donut Charts -->
+<section class="p-4 grid grid-cols-2 gap-4">
+<div class="bg-slate-100 dark:bg-slate-800/50 rounded-xl p-4 border border-slate-200 dark:border-slate-800 flex flex-col items-center">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">Resource Utilization</p>
+<div class="relative size-24 flex items-center justify-center">
+<div class="donut-chart size-full"></div>
+<div class="absolute size-16 bg-slate-100 dark:bg-[#182c34] rounded-full flex items-center justify-center">
+<span class="text-slate-900 dark:text-slate-100 font-bold text-sm">72%</span>
+</div>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-xs mt-4 font-medium">Core Systems</p>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800/50 rounded-xl p-4 border border-slate-200 dark:border-slate-800 flex flex-col items-center">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">Node Load</p>
+<div class="relative size-24 flex items-center justify-center">
+<div class="size-full rounded-full" style="background: conic-gradient(from 0deg, #3abff8 0% 45%, #223d49 45% 100%);"></div>
+<div class="absolute size-16 bg-slate-100 dark:bg-[#182c34] rounded-full flex items-center justify-center">
+<span class="text-slate-900 dark:text-slate-100 font-bold text-sm">45%</span>
+</div>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-xs mt-4 font-medium">Remote Clusters</p>
+</div>
+</section>
+<!-- Sector Cards -->
+<section class="p-4">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold">Key Sectors</h2>
+<button class="text-primary text-sm font-bold">View All</button>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-slate-100 dark:bg-slate-800/50 rounded-xl p-4 border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+<div class="size-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">database</span>
+</div>
+<div class="flex-1">
+<h3 class="text-slate-900 dark:text-slate-100 font-bold text-sm">Data Infrastructure</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs">14 active projects</p>
+</div>
+<div class="text-right">
+<p class="text-slate-900 dark:text-slate-100 font-bold text-sm">$420k</p>
+<p class="text-primary text-[10px] font-bold">ROI 4.2x</p>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800/50 rounded-xl p-4 border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+<div class="size-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div class="flex-1">
+<h3 class="text-slate-900 dark:text-slate-100 font-bold text-sm">Cyber Security</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs">8 active projects</p>
+</div>
+<div class="text-right">
+<p class="text-slate-900 dark:text-slate-100 font-bold text-sm">$1.2M</p>
+<p class="text-primary text-[10px] font-bold">ROI 3.1x</p>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800/50 rounded-xl p-4 border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+<div class="size-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<div class="flex-1">
+<h3 class="text-slate-900 dark:text-slate-100 font-bold text-sm">Network Edge</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs">22 active projects</p>
+</div>
+<div class="text-right">
+<p class="text-slate-900 dark:text-slate-100 font-bold text-sm">$890k</p>
+<p class="text-primary text-[10px] font-bold">ROI 2.8x</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-50">
+<div class="flex gap-2 border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-[#182c34] px-4 pb-4 pt-2 shadow-lg">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">dashboard</span>
+</div>
+<p class="text-xs font-medium">Dashboard</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">pie_chart</span>
+</div>
+<p class="text-xs font-medium">Analytics</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">account_tree</span>
+</div>
+<p class="text-xs font-medium">Departments</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<p class="text-xs font-medium">Settings</p>
+</a>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a854f8",
+                        "accent-cyan": "#06b6d4",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#020617",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(168, 84, 248, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(168, 84, 248, 0.2);
+        }
+        .neo-glow {
+            box-shadow: 0 0 15px rgba(168, 84, 248, 0.3);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen pb-24">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 glass border-b border-primary/20 px-4 py-3 flex items-center justify-between">
+<button class="p-2 text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex flex-col items-center">
+<h1 class="text-sm font-bold tracking-tight text-primary">STRATIFYX</h1>
+<p class="text-[10px] font-mono text-accent-cyan uppercase tracking-widest">Marketplace</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-slate-400">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 text-slate-400 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+</div>
+</header>
+<main class="flex flex-col gap-6 pt-4">
+<!-- Hero Section: Destaques -->
+<section>
+<h2 class="px-4 mb-4 text-xs font-bold tracking-[0.2em] text-slate-400 uppercase">Destaques da Comunidade</h2>
+<div class="flex overflow-x-auto gap-4 px-4 hide-scrollbar">
+<!-- Card 1 -->
+<div class="min-w-[280px] rounded-xl overflow-hidden glass border border-primary/30 neo-glow relative">
+<div class="h-40 bg-cover bg-center relative" data-alt="High tech digital brain neural network visualization" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAm_41GiCc1QPxoV-heBp-dZX5hNW5dpKQ5_4oKht1mTHiHDyLq0RGeF0UJ-jfSd5NGj0Cenn3jTAjejPplh93ZwpsDnbUGxaNvID2RX6-fbn_sJ4oeS7zJNkuSTiJyY12RVD9n-av6Emnz1BOkow3d0_50p_ryfDu1AARZF0Zte0OZQAzd3Z7xBFL8iUESRF7dhrCoQsXCelLsBzXqbPBMzq0QR6ljd6VzepeVKWHF6tE2sktdgc0vdHP-qPyDttQIw-rUAgj8fMw')">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-4">
+<span class="bg-primary px-2 py-0.5 rounded text-[10px] font-bold text-white uppercase tracking-tighter">Premium</span>
+</div>
+</div>
+<div class="p-4 bg-background-dark/80">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg">Nexus (Estrategista)</h3>
+<div class="flex items-center gap-1 font-mono text-[10px] text-accent-cyan">
+<span class="material-symbols-outlined text-[12px] fill-1">bolt</span>
+                                99.2%
+                            </div>
+</div>
+<p class="text-xs text-slate-400 mb-4 line-clamp-2">Orquestração avançada de negócios e análise preditiva de mercado em tempo real.</p>
+<button class="w-full py-2 bg-primary hover:bg-primary/80 text-white rounded-lg text-sm font-bold transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                            INSTALAR
+                        </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[280px] rounded-xl overflow-hidden glass border border-accent-cyan/30 relative">
+<div class="h-40 bg-cover bg-center relative" data-alt="Data visualization streams and binary code patterns" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBB0tl-OcDW8-tZxG5dEU2CVnMfqviPB8vGVysBuYe3jfbjgsSxN0jzli40pGeD4VzlWT4Zal_D3uF989gbwsFmFhuHNoqL4kBdeHpyvXMnb8fTjdqvfXtJNs4hGxwsWOdAgwSzAcSvc2_B4VTrcFQrcRvB0s3SdWbN7iyRk4Ly9kVcDWP14-jJ79scUqMTaULnU25EJU5NiUCkFIZZfcl6faawjx35dIqwwSferV-NpGUfAJMz1xStbt4ATSHGjmN5l9EiO-lmTfU')">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-4">
+<span class="bg-accent-cyan px-2 py-0.5 rounded text-[10px] font-bold text-white uppercase tracking-tighter">Mining</span>
+</div>
+</div>
+<div class="p-4 bg-background-dark/80">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg">Vortex (Data Mining)</h3>
+<div class="flex items-center gap-1 font-mono text-[10px] text-accent-cyan">
+<span class="material-symbols-outlined text-[12px] fill-1">bolt</span>
+                                98.7%
+                            </div>
+</div>
+<p class="text-xs text-slate-400 mb-4 line-clamp-2">Mineração profunda de dados e extração automatizada de insights estratégicos.</p>
+<button class="w-full py-2 bg-slate-800 hover:bg-slate-700 text-slate-100 border border-slate-600 rounded-lg text-sm font-bold transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">visibility</span>
+                            PREVIEW
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section>
+<div class="flex items-center justify-between px-4 mb-3">
+<h2 class="text-xs font-bold tracking-[0.2em] text-slate-400 uppercase">Categorias</h2>
+<button class="text-[10px] text-primary font-bold">VER TODAS</button>
+</div>
+<div class="flex overflow-x-auto gap-2 px-4 hide-scrollbar">
+<span class="px-4 py-2 rounded-full glass border border-primary/40 text-xs font-bold text-primary whitespace-nowrap">Finanças</span>
+<span class="px-4 py-2 rounded-full glass border border-slate-700 text-xs text-slate-400 whitespace-nowrap">Jurídico</span>
+<span class="px-4 py-2 rounded-full glass border border-slate-700 text-xs text-slate-400 whitespace-nowrap">Criatividade</span>
+<span class="px-4 py-2 rounded-full glass border border-slate-700 text-xs text-slate-400 whitespace-nowrap">DevOps</span>
+<span class="px-4 py-2 rounded-full glass border border-slate-700 text-xs text-slate-400 whitespace-nowrap">Marketing</span>
+</div>
+</section>
+<!-- Grid: Novos Agentes -->
+<section class="px-4 mb-8">
+<h2 class="text-xs font-bold tracking-[0.2em] text-slate-400 uppercase mb-4">Novos Agentes Disponíveis</h2>
+<div class="grid grid-cols-2 gap-3">
+<!-- Micro-card 1 -->
+<div class="glass p-3 rounded-xl border border-slate-800 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent-cyan p-0.5">
+<div class="w-full h-full rounded-[6px] bg-background-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">account_balance</span>
+</div>
+</div>
+<div>
+<h4 class="text-[11px] font-bold truncate">AuditPro</h4>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[10px] text-yellow-500 fill-1">star</span>
+<span class="text-[9px] font-mono ml-1">4.9</span>
+</div>
+</div>
+</div>
+<p class="text-[10px] text-slate-400 leading-tight h-8 line-clamp-2">Auditoria fiscal e conformidade automática.</p>
+<button class="w-full py-1.5 rounded-lg bg-primary/10 text-primary border border-primary/20 text-[10px] font-bold">PREVIEW</button>
+</div>
+<!-- Micro-card 2 -->
+<div class="glass p-3 rounded-xl border border-slate-800 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent-cyan to-blue-500 p-0.5">
+<div class="w-full h-full rounded-[6px] bg-background-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-accent-cyan text-xl">terminal</span>
+</div>
+</div>
+<div>
+<h4 class="text-[11px] font-bold truncate">DevAssist</h4>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[10px] text-yellow-500 fill-1">star</span>
+<span class="text-[9px] font-mono ml-1">4.8</span>
+</div>
+</div>
+</div>
+<p class="text-[10px] text-slate-400 leading-tight h-8 line-clamp-2">Refatoração e testes unitários via IA.</p>
+<button class="w-full py-1.5 rounded-lg bg-primary/10 text-primary border border-primary/20 text-[10px] font-bold">PREVIEW</button>
+</div>
+<!-- Micro-card 3 -->
+<div class="glass p-3 rounded-xl border border-slate-800 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 p-0.5">
+<div class="w-full h-full rounded-[6px] bg-background-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-orange-500 text-xl">palette</span>
+</div>
+</div>
+<div>
+<h4 class="text-[11px] font-bold truncate">CreativeFlow</h4>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[10px] text-yellow-500 fill-1">star</span>
+<span class="text-[9px] font-mono ml-1">5.0</span>
+</div>
+</div>
+</div>
+<p class="text-[10px] text-slate-400 leading-tight h-8 line-clamp-2">Geração de assets visuais para campanhas.</p>
+<button class="w-full py-1.5 rounded-lg bg-primary/10 text-primary border border-primary/20 text-[10px] font-bold">PREVIEW</button>
+</div>
+<!-- Micro-card 4 -->
+<div class="glass p-3 rounded-xl border border-slate-800 flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-green-400 to-emerald-600 p-0.5">
+<div class="w-full h-full rounded-[6px] bg-background-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-green-400 text-xl">language</span>
+</div>
+</div>
+<div>
+<h4 class="text-[11px] font-bold truncate">GlobalTranslate</h4>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[10px] text-yellow-500 fill-1">star</span>
+<span class="text-[9px] font-mono ml-1">4.7</span>
+</div>
+</div>
+</div>
+<p class="text-[10px] text-slate-400 leading-tight h-8 line-clamp-2">Localização em tempo real para 50+ idiomas.</p>
+<button class="w-full py-1.5 rounded-lg bg-primary/10 text-primary border border-primary/20 text-[10px] font-bold">PREVIEW</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 glass border-t border-primary/20 flex items-center justify-around py-3 px-6 z-50">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">explore</span>
+<span class="text-[10px] font-medium">Discover</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="text-[10px] font-medium">Meus Agentes</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">all_inclusive</span>
+<span class="text-[10px] font-medium">Orchestra</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="text-[10px] font-medium">Status</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3abff8",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101d23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .stealth-gradient {
+            background: linear-gradient(180deg, rgba(58, 191, 248, 0.05) 0%, rgba(16, 29, 35, 0) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Header Section -->
+<header class="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight">Performance Report</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">share</span>
+</button>
+<button class="flex items-center justify-center p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">download</span>
+</button>
+</div>
+</header>
+<!-- Navigation Tabs -->
+<nav class="flex border-b border-slate-200 dark:border-slate-800 px-6 bg-background-light dark:bg-background-dark">
+<a class="flex flex-col items-center justify-center border-b-2 border-primary text-primary px-4 py-3 text-sm font-bold tracking-wide" href="#">
+                OVERVIEW
+            </a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-primary px-4 py-3 text-sm font-bold tracking-wide transition-colors" href="#">
+                AGENTS
+            </a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-primary px-4 py-3 text-sm font-bold tracking-wide transition-colors" href="#">
+                SAVINGS
+            </a>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto stealth-gradient p-6 space-y-6">
+<!-- Executive Summary KPIs -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Total ROI</p>
+<span class="material-symbols-outlined text-primary text-xl">payments</span>
+</div>
+<p class="text-3xl font-bold leading-tight">$42,580</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-emerald-500 text-sm">trending_up</span>
+<p class="text-emerald-500 text-sm font-bold">+12.4%</p>
+<span class="text-slate-400 text-xs ml-1">vs last month</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Executive KPI</p>
+<span class="material-symbols-outlined text-primary text-xl">verified</span>
+</div>
+<p class="text-3xl font-bold leading-tight">98.2%</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-rose-500 text-sm">trending_down</span>
+<p class="text-rose-500 text-sm font-bold">-0.5%</p>
+<span class="text-slate-400 text-xs ml-1">target 99.0%</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Net Savings</p>
+<span class="material-symbols-outlined text-primary text-xl">savings</span>
+</div>
+<p class="text-3xl font-bold leading-tight">$12,440</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-emerald-500 text-sm">trending_up</span>
+<p class="text-emerald-500 text-sm font-bold">+8.2%</p>
+<span class="text-slate-400 text-xs ml-1">automated ops</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Active Agents</p>
+<span class="material-symbols-outlined text-primary text-xl">smart_toy</span>
+</div>
+<p class="text-3xl font-bold leading-tight">24/30</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="text-slate-400 text-xs">80% deployment capacity</span>
+</div>
+</div>
+</section>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Agent Impact Bar Chart (Monochrome Stealth) -->
+<div class="rounded-xl p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                        Agent Performance Impact
+                    </h3>
+<div class="space-y-4">
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-medium uppercase tracking-tighter text-slate-500">
+<span>Core Intelligence Agent</span>
+<span>94%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 94%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-medium uppercase tracking-tighter text-slate-500">
+<span>Security Protocol Alpha</span>
+<span>82%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary/70" style="width: 82%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-medium uppercase tracking-tighter text-slate-500">
+<span>Data Synthesis Unit</span>
+<span>65%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary/50" style="width: 65%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-medium uppercase tracking-tighter text-slate-500">
+<span>Support Automation v2</span>
+<span>48%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary/30" style="width: 48%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Cost Saving Charts (Monochrome Stealth) -->
+<div class="rounded-xl p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">query_stats</span>
+                        Monthly Cost Savings Trends
+                    </h3>
+<div class="flex items-end justify-between h-40 gap-2 px-2">
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary/10 rounded-t-sm h-[30%]"></div>
+<span class="text-[10px] text-slate-500 font-bold">JAN</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary/20 rounded-t-sm h-[45%]"></div>
+<span class="text-[10px] text-slate-500 font-bold">FEB</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary/30 rounded-t-sm h-[40%]"></div>
+<span class="text-[10px] text-slate-500 font-bold">MAR</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary/40 rounded-t-sm h-[60%]"></div>
+<span class="text-[10px] text-slate-500 font-bold">APR</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary/60 rounded-t-sm h-[75%]"></div>
+<span class="text-[10px] text-slate-500 font-bold">MAY</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary/80 rounded-t-sm h-[90%]"></div>
+<span class="text-[10px] text-slate-500 font-bold">JUN</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary rounded-t-sm h-[100%]"></div>
+<span class="text-[10px] text-primary font-bold">JUL</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Analysis Table -->
+<section class="rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+<h3 class="font-bold">ROI Factor Breakdown</h3>
+<button class="text-primary text-sm font-bold flex items-center gap-1">
+                        VIEW FULL REPORT <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider">
+<th class="px-6 py-3 font-semibold">Category</th>
+<th class="px-6 py-3 font-semibold text-right">Raw Value</th>
+<th class="px-6 py-3 font-semibold text-right">Adjustment</th>
+<th class="px-6 py-3 font-semibold text-right">Net ROI</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr>
+<td class="px-6 py-4 text-sm font-medium">Operational Speed</td>
+<td class="px-6 py-4 text-sm text-right">$15,200</td>
+<td class="px-6 py-4 text-sm text-right text-emerald-500">+$2,400</td>
+<td class="px-6 py-4 text-sm font-bold text-right">$17,600</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm font-medium">Error Reduction</td>
+<td class="px-6 py-4 text-sm text-right">$8,400</td>
+<td class="px-6 py-4 text-sm text-right text-emerald-500">+$1,100</td>
+<td class="px-6 py-4 text-sm font-bold text-right">$9,500</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm font-medium">Resource Reallocation</td>
+<td class="px-6 py-4 text-sm text-right">$12,000</td>
+<td class="px-6 py-4 text-sm text-right text-rose-500">-$450</td>
+<td class="px-6 py-4 text-sm font-bold text-right">$11,550</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<footer class="flex gap-2 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pb-4 pt-2 shrink-0">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Dashboard</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px] font-fill">bar_chart</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Reports</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">group</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Agents</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Settings</p>
+</a>
+</footer>
+</div>
+</body></html>

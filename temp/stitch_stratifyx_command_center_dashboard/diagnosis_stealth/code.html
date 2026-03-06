@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Operational Diagnosis - Stealth Mode</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3abff8",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101d23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .stealth-gradient {
+            background: linear-gradient(180deg, rgba(58, 191, 248, 0.05) 0%, rgba(16, 29, 35, 0) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display">
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center p-4 justify-between max-w-5xl mx-auto w-full">
+<div class="flex items-center gap-4">
+<button class="text-slate-900 dark:text-slate-100 flex size-10 items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div>
+<h1 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Operational Diagnosis</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">SYSTEM_ID: X-99-STEALTH</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex size-10 items-center justify-center rounded-full bg-transparent text-slate-900 dark:text-slate-100 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined">sensors</span>
+</button>
+</div>
+</div>
+<nav class="flex px-4 gap-8 max-w-5xl mx-auto w-full">
+<a class="flex flex-col items-center justify-center border-b-2 border-primary text-slate-900 dark:text-slate-100 pb-3 pt-2" href="#">
+<span class="text-sm font-bold tracking-wide">OVERVIEW</span>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 hover:text-primary transition-colors" href="#">
+<span class="text-sm font-bold tracking-wide">METRICS</span>
+</a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-2 hover:text-primary transition-colors" href="#">
+<span class="text-sm font-bold tracking-wide">LOGS</span>
+</a>
+</nav>
+</header>
+<main class="flex-1 max-w-5xl mx-auto w-full p-4 space-y-6">
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="md:col-span-2 bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-6 stealth-gradient">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Efficiency Index</p>
+<h2 class="text-slate-900 dark:text-slate-100 text-4xl font-black mt-1">84.2%</h2>
+<div class="flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-red-500 text-sm">trending_down</span>
+<p class="text-red-500 text-sm font-bold">-2.4% <span class="text-slate-400 font-normal">vs prev. 24h</span></p>
+</div>
+</div>
+<div class="bg-primary/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+</div>
+<div class="h-48 w-full flex items-end justify-between gap-2 px-2">
+<div class="bg-slate-300 dark:bg-slate-700 w-full rounded-t-sm opacity-20" style="height: 30%"></div>
+<div class="bg-slate-300 dark:bg-slate-700 w-full rounded-t-sm opacity-30" style="height: 45%"></div>
+<div class="bg-slate-300 dark:bg-slate-700 w-full rounded-t-sm opacity-40" style="height: 60%"></div>
+<div class="bg-slate-300 dark:bg-slate-700 w-full rounded-t-sm opacity-50" style="height: 85%"></div>
+<div class="bg-primary w-full rounded-t-sm" style="height: 70%"></div>
+<div class="bg-slate-300 dark:bg-slate-700 w-full rounded-t-sm opacity-50" style="height: 55%"></div>
+<div class="bg-slate-300 dark:bg-slate-700 w-full rounded-t-sm opacity-40" style="height: 40%"></div>
+<div class="bg-slate-300 dark:bg-slate-700 w-full rounded-t-sm opacity-30" style="height: 35%"></div>
+</div>
+<div class="flex justify-between mt-3 text-[10px] text-slate-500 font-bold tracking-tighter">
+<span>00:00</span>
+<span>04:00</span>
+<span>08:00</span>
+<span>12:00</span>
+<span>16:00</span>
+<span>20:00</span>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-6 flex flex-col justify-between">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">System Health Radar</p>
+<div class="relative aspect-square w-full flex items-center justify-center">
+<div class="absolute inset-0 border border-slate-800 rounded-full opacity-20 scale-100"></div>
+<div class="absolute inset-0 border border-slate-800 rounded-full opacity-20 scale-75"></div>
+<div class="absolute inset-0 border border-slate-800 rounded-full opacity-20 scale-50"></div>
+<div class="absolute inset-0 border border-slate-800 rounded-full opacity-20 scale-25"></div>
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<polygon class="text-slate-400 opacity-50" fill="none" points="50,10 80,40 70,80 30,80 20,40" stroke="currentColor" stroke-width="0.5"></polygon>
+<polygon fill="rgba(58, 191, 248, 0.2)" points="50,25 70,45 60,70 40,70 30,45" stroke="#3abff8" stroke-width="1.5"></polygon>
+</svg>
+<div class="absolute top-0 text-[8px] font-bold text-slate-500">CPU</div>
+<div class="absolute right-0 text-[8px] font-bold text-slate-500">MEM</div>
+<div class="absolute bottom-0 text-[8px] font-bold text-slate-500">IO</div>
+<div class="absolute left-0 text-[8px] font-bold text-slate-500">NET</div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-800">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-500">Status:</span>
+<span class="text-primary font-bold">OPERATIONAL</span>
+</div>
+</div>
+</div>
+</section>
+<section class="space-y-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-black uppercase tracking-widest px-1">Heatmap Activity</h3>
+<div class="bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-6 overflow-x-auto">
+<div class="grid grid-cols-12 gap-1 min-w-[600px]">
+<div class="col-span-1 text-[10px] text-slate-500 font-bold self-center">L1_NODE</div>
+<div class="col-span-11 grid grid-cols-24 gap-1">
+<div class="h-6 bg-primary/10 border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary/20 border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary/40 border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary/60 border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary/80 border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary/70 border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary/40 border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary/20 border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary/10 border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary/5 border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary/20 border border-primary/5 rounded-sm"></div>
+</div>
+<div class="col-span-1 text-[10px] text-slate-500 font-bold self-center">L2_NODE</div>
+<div class="col-span-11 grid grid-cols-12 gap-1">
+<div class="h-6 bg-slate-800 border border-slate-700 rounded-sm"></div>
+<div class="h-6 bg-slate-800 border border-slate-700 rounded-sm"></div>
+<div class="h-6 bg-primary/40 border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary/80 border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary/40 border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-slate-800 border border-slate-700 rounded-sm"></div>
+<div class="h-6 bg-slate-800 border border-slate-700 rounded-sm"></div>
+<div class="h-6 bg-slate-800 border border-slate-700 rounded-sm"></div>
+<div class="h-6 bg-primary/20 border border-primary/5 rounded-sm"></div>
+<div class="h-6 bg-primary/40 border border-primary/5 rounded-sm"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-4 flex items-center gap-4">
+<div class="size-12 rounded-lg bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">memory</span>
+</div>
+<div class="flex-1">
+<p class="text-[10px] font-bold text-slate-500 uppercase">Core Temperature</p>
+<p class="text-xl font-black text-slate-900 dark:text-slate-100">42.8°C</p>
+</div>
+<div class="text-right">
+<span class="text-[10px] font-bold bg-green-500/10 text-green-500 px-2 py-0.5 rounded border border-green-500/20">STABLE</span>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-4 flex items-center gap-4">
+<div class="size-12 rounded-lg bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">bolt</span>
+</div>
+<div class="flex-1">
+<p class="text-[10px] font-bold text-slate-500 uppercase">Energy Drain</p>
+<p class="text-xl font-black text-slate-900 dark:text-slate-100">12.4 kW/h</p>
+</div>
+<div class="text-right">
+<span class="text-[10px] font-bold bg-primary/10 text-primary px-2 py-0.5 rounded border border-primary/20">NOMINAL</span>
+</div>
+</div>
+</section>
+</main>
+<footer class="mt-auto border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark/95">
+<div class="flex gap-2 px-4 pb-6 pt-2 max-w-5xl mx-auto w-full">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors py-2" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter">Dashboard</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary py-2 relative" href="#">
+<div class="absolute -top-1 w-8 h-1 bg-primary rounded-full"></div>
+<span class="material-symbols-outlined">analytics</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter">Diagnosis</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors py-2" href="#">
+<span class="material-symbols-outlined">description</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter">Reports</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors py-2" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-[10px] font-bold uppercase tracking-tighter">Settings</p>
+</a>
+</div>
+</footer>
+</body></html>

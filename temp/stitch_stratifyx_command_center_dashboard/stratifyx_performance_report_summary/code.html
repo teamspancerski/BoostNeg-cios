@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StratifyX Performance Report Summary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df269",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#020617", // Slate 950 base
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-border {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neo-gradient {
+            background: linear-gradient(135deg, rgba(13, 242, 105, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="relative flex h-full min-h-screen w-full flex-col pb-24">
+<header class="sticky top-0 z-50 flex items-center justify-between bg-background-dark/80 backdrop-blur-md px-6 py-4 glass-border border-t-0 border-x-0">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">token</span>
+<div>
+<h1 class="text-sm font-mono font-bold tracking-tighter text-slate-400">STRATIFY<span class="text-primary">X</span></h1>
+<p class="text-[10px] font-medium uppercase tracking-widest text-slate-500">BoostNegócios IA</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative flex size-10 items-center justify-center rounded-full glass-border bg-slate-900">
+<span class="material-symbols-outlined text-slate-300 text-xl">notifications</span>
+<span class="absolute top-2 right-2 size-2 rounded-full bg-primary ring-2 ring-background-dark"></span>
+</button>
+<div class="size-10 rounded-full bg-gradient-to-tr from-primary to-blue-500 p-[1px]">
+<div class="size-full rounded-full bg-slate-950 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-slate-300">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex flex-col gap-6 p-6">
+<section class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="text-xs font-mono font-bold uppercase tracking-[0.2em] text-primary">Intelligence Hub</h2>
+<h3 class="text-2xl font-extrabold tracking-tight text-white uppercase">Relatório de Performance Global</h3>
+</div>
+<div class="flex items-center justify-between rounded-xl glass-border bg-slate-900/50 p-3">
+<button class="flex size-8 items-center justify-center rounded-lg hover:bg-slate-800">
+<span class="material-symbols-outlined text-slate-400">chevron_left</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">calendar_today</span>
+<p class="text-sm font-bold text-slate-200">Outubro 2023</p>
+</div>
+<button class="flex size-8 items-center justify-center rounded-lg hover:bg-slate-800">
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</button>
+</div>
+</section>
+<section class="grid grid-cols-1 gap-4">
+<div class="relative flex flex-col gap-3 rounded-2xl glass-border bg-slate-900/40 p-6 overflow-hidden">
+<div class="absolute -right-8 -top-8 size-32 rounded-full bg-primary/10 blur-3xl"></div>
+<div class="flex items-center justify-between">
+<p class="text-xs font-mono font-bold uppercase tracking-widest text-slate-400">ROI Total</p>
+<span class="material-symbols-outlined text-primary">trending_up</span>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="text-5xl font-black tracking-tighter text-primary">+452%</p>
+<span class="text-sm font-bold text-primary/80">+12.5%</span>
+</div>
+<div class="h-12 w-full mt-2">
+<div class="flex h-full items-end gap-1">
+<div class="h-1/3 w-full rounded-t-sm bg-primary/20"></div>
+<div class="h-2/3 w-full rounded-t-sm bg-primary/20"></div>
+<div class="h-1/2 w-full rounded-t-sm bg-primary/20"></div>
+<div class="h-3/4 w-full rounded-t-sm bg-primary/40"></div>
+<div class="h-2/3 w-full rounded-t-sm bg-primary/30"></div>
+<div class="h-full w-full rounded-t-sm bg-primary"></div>
+<div class="h-4/5 w-full rounded-t-sm bg-primary/80"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2 rounded-2xl glass-border bg-slate-900/40 p-5">
+<p class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">Economia</p>
+<p class="text-2xl font-bold tracking-tight text-white font-mono">12.450h</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-primary">arrow_upward</span>
+<span class="text-[10px] font-bold text-primary">+8.2%</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-2xl glass-border bg-slate-900/40 p-5">
+<p class="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">Precisão</p>
+<p class="text-2xl font-bold tracking-tight text-white font-mono">99.8%</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-primary">check_circle</span>
+<span class="text-[10px] font-bold text-primary">Estável</span>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-4 rounded-2xl glass-border bg-slate-900/40 p-6">
+<div class="flex items-center justify-between">
+<h4 class="text-xs font-mono font-bold uppercase tracking-widest text-slate-400">Top Agentes por Impacto</h4>
+<span class="material-symbols-outlined text-slate-500 text-sm">info</span>
+</div>
+<div class="flex flex-col gap-4">
+<div class="space-y-1">
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-bold text-slate-200">ISA <span class="text-[10px] text-slate-500 font-normal">(Strategic Ops)</span></span>
+<span class="font-mono text-primary">94%</span>
+</div>
+<div class="h-2 w-full rounded-full bg-slate-800">
+<div class="h-full w-[94%] rounded-full bg-gradient-to-r from-primary/50 to-primary"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-bold text-slate-200">Rosie <span class="text-[10px] text-slate-500 font-normal">(Data Analytics)</span></span>
+<span class="font-mono text-primary">88%</span>
+</div>
+<div class="h-2 w-full rounded-full bg-slate-800">
+<div class="h-full w-[88%] rounded-full bg-gradient-to-r from-primary/50 to-primary"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-bold text-slate-200">Jhow <span class="text-[10px] text-slate-500 font-normal">(Market Intelligence)</span></span>
+<span class="font-mono text-primary">76%</span>
+</div>
+<div class="h-2 w-full rounded-full bg-slate-800">
+<div class="h-full w-[76%] rounded-full bg-gradient-to-r from-primary/50 to-primary"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-4 rounded-2xl glass-border bg-slate-950/80 p-6 neo-gradient">
+<div class="flex items-center justify-between">
+<div>
+<h4 class="text-xs font-mono font-bold uppercase tracking-widest text-slate-400">Economia Mensal</h4>
+<p class="text-xl font-bold text-white">Projeção Q4</p>
+</div>
+<span class="material-symbols-outlined text-blue-400">query_stats</span>
+</div>
+<div class="h-40 w-full relative">
+<svg class="h-full w-full" preserveaspectratio="none" viewbox="0 0 400 100">
+<defs>
+<lineargradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0df269" stop-opacity="0.5"></stop>
+<stop offset="100%" stop-color="#3b82f6" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0 80 Q 50 20, 100 50 T 200 10 T 300 60 T 400 30 L 400 100 L 0 100 Z" fill="url(#areaGradient)"></path>
+<path d="M0 80 Q 50 20, 100 50 T 200 10 T 300 60 T 400 30" fill="none" stroke="#0df269" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute bottom-0 flex w-full justify-between text-[10px] font-mono text-slate-500 pt-2 border-t border-slate-800">
+<span>AGO</span>
+<span>SET</span>
+<span>OUT</span>
+<span>NOV</span>
+<span>DEZ</span>
+</div>
+</div>
+</section>
+</main>
+<button class="fixed bottom-24 right-6 z-50 flex h-14 items-center gap-3 rounded-full bg-primary px-6 text-slate-950 shadow-[0_0_20px_rgba(13,242,105,0.4)] transition-transform active:scale-95">
+<span class="material-symbols-outlined font-bold">picture_as_pdf</span>
+<span class="text-sm font-bold uppercase tracking-wider">Baixar PDF</span>
+</button>
+<nav class="fixed bottom-0 z-50 flex w-full items-center justify-around border-t glass-border bg-slate-950/90 backdrop-blur-xl px-4 pb-8 pt-4">
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Dash</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Agentes</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">analytics</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Relatórios</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Ajustes</span>
+</a>
+</nav>
+</div>
+</body></html>

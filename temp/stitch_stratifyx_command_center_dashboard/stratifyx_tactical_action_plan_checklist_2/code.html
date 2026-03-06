@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StratifyX Agent Network Grid</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#07b6d5",
+                        "emerald-accent": "#10b981",
+                        "slate-950": "#020617",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-slate-950 text-slate-100 font-display selection:bg-primary/30;
+                background-image: 
+                    radial-gradient(circle at 50% 50%, rgba(7, 182, 213, 0.05) 0%, transparent 50%),
+                    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%2307b6d5' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            }
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(7, 182, 213, 0.2);
+        }
+        .agent-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(7, 182, 213, 0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(7, 182, 213, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(7, 182, 213, 0); }
+        }
+        .waveform span {
+            display: inline-block;
+            width: 2px;
+            background: currentColor;
+            margin: 0 1px;
+            border-radius: 1px;
+            animation: wave 1.2s ease-in-out infinite;
+        }
+        @keyframes wave {
+            0%, 100% { height: 4px; }
+            50% { height: 12px; }
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col max-w-md mx-auto relative overflow-hidden">
+<div class="fixed inset-0 pointer-events-none opacity-20">
+<svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#07b6d5" stroke-width="0.5" x1="10%" x2="40%" y1="20%" y2="50%"></line>
+<line stroke="#10b981" stroke-width="0.5" x1="40%" x2="80%" y1="50%" y2="30%"></line>
+<circle cx="10%" cy="20%" fill="#07b6d5" r="2"></circle>
+<circle cx="40%" cy="50%" fill="#10b981" r="2"></circle>
+<circle cx="80%" cy="30%" fill="#07b6d5" r="2"></circle>
+</svg>
+</div>
+<header class="sticky top-0 z-50 pt-6 px-4 pb-2 bg-slate-950/80 backdrop-blur-md">
+<div class="flex items-center justify-between mb-4">
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-white">Rede de Agentes</h1>
+<p class="text-[10px] font-mono text-primary uppercase tracking-widest">StratifyX / 250+ Ativos</p>
+</div>
+<div class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center bg-slate-900">
+<span class="material-symbols-outlined text-primary">hub</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">search</span>
+<input class="w-full bg-slate-900/50 border border-slate-800 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:border-primary/50 text-slate-200" placeholder="Filtrar 250+ Agentes..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+<button class="px-4 py-1.5 rounded-full bg-primary/20 text-primary text-[10px] font-bold border border-primary/30 whitespace-nowrap">ATIVOS (182)</button>
+<button class="px-4 py-1.5 rounded-full bg-slate-900 text-slate-400 text-[10px] font-bold border border-slate-800 whitespace-nowrap">INATIVOS (42)</button>
+<button class="px-4 py-1.5 rounded-full bg-slate-900 text-slate-400 text-[10px] font-bold border border-slate-800 whitespace-nowrap">EM PAUSA (26)</button>
+</div>
+</div>
+</header>
+<main class="flex-1 px-4 py-4 grid grid-cols-2 gap-3 overflow-y-auto no-scrollbar">
+<div class="glass-card rounded-2xl p-3 flex flex-col gap-2 relative group transition-all hover:border-primary/50">
+<div class="flex justify-between items-start">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden agent-pulse">
+<img alt="Rosie" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVEbBQ2Lo822yGn6wuY1MNAjA90a9fIOnstMFaYUviJuPsJCIhPUmQ1sw36NY7BLkAIyLY7i193P_RNzch2QnU6fHHYXMvpzE9YKZ4jbLelq3r9T3nYbCmruz7Z4sOBPl1SqYjBvcIzObQwlN20uIppPirbmTfoPnUPor--ar1oGOTcAl-R9vjugCePFYOm9jX2s9UIxegi_BVC4gC_FbIDJN2eEndmk_ApnO0oY9LcRceJILdj2JLWhNQli2ZrV5lmsxFJe5qo48"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-3 h-3 bg-emerald-accent rounded-full border-2 border-slate-950"></div>
+</div>
+<div class="flex items-end h-4 waveform text-primary">
+<span style="animation-delay: 0.1s"></span>
+<span style="animation-delay: 0.3s"></span>
+<span style="animation-delay: 0.2s"></span>
+<span style="animation-delay: 0.4s"></span>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-bold text-white truncate">Rosie (Suporte)</h3>
+<span class="text-[9px] font-mono text-primary/70 uppercase">#AGT-001</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="text-[8px] font-bold bg-emerald-accent/20 text-emerald-accent px-1.5 py-0.5 rounded">PROCESSANDO</span>
+<span class="material-symbols-outlined text-[14px] text-slate-500">settings</span>
+</div>
+</div>
+<div class="glass-card rounded-2xl p-3 flex flex-col gap-2 relative transition-all hover:border-primary/50">
+<div class="flex justify-between items-start">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img alt="Jhow" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC83T-JNmxbYa05c8_owjOUDZhXfkM505bkVz3HURWpJjtHg1zgP2uWcbPBFVJQtxENhslkw_6ksbi-MTywSriPdkZHU627YT2dK8nNQVRPbHv-1W1PaDBxkVmlNjRjFzylNv0Lq9HCJYPkC30P4VZes6wwS4gv4rTUkdV7i3iCT_V4lDSf_WSiRlEZqRXjmq9GWaETpk0AiEWifS7mom1A27H0X34WFE_dCOG-cwZMr8lLWAPUQHgVDqdbjoilXZq2tqDXzLLC160"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-3 h-3 bg-emerald-accent rounded-full border-2 border-slate-950"></div>
+</div>
+<div class="flex items-end h-4 waveform text-emerald-accent">
+<span style="animation-delay: 0.5s"></span>
+<span style="animation-delay: 0.2s"></span>
+<span style="animation-delay: 0.1s"></span>
+<span style="animation-delay: 0.6s"></span>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-bold text-white truncate">Jhow (Logística)</h3>
+<span class="text-[9px] font-mono text-primary/70 uppercase">#AGT-042</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="text-[8px] font-bold bg-primary/20 text-primary px-1.5 py-0.5 rounded uppercase">Otimizando</span>
+<span class="material-symbols-outlined text-[14px] text-slate-500">more_horiz</span>
+</div>
+</div>
+<div class="glass-card rounded-2xl p-3 flex flex-col gap-2 relative transition-all hover:border-primary/50">
+<div class="flex justify-between items-start">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden agent-pulse">
+<img alt="Luma" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-lB5mAfbtj0CniFTIWb6EvCSwgLI-UbMlI1zWVizwYN4byYZRsrFHWUS9bSk5Nsa9q2GV4ESs3SUxOtVT8qd2_3qMSkg5r1yhCD0xWzNscvKUsCEurO6jrfUukHaKjkya7RjDhVsTgU3eJfBqfL0sbLHGwvJcE9kLKd3hlSpeGWLohgq-W0it3ktEd0TS97T8PJ3T9saDecKdljD2NNa0G9NiQ4FS3DP6FXSS2RbgRpzmE8cTGeEyNku-L6rgVXauBzjnT77c4AY"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-3 h-3 bg-emerald-accent rounded-full border-2 border-slate-950"></div>
+</div>
+<div class="flex items-end h-4 waveform text-slate-400">
+<span style="animation-delay: 0.1s"></span>
+<span style="animation-delay: 0.1s"></span>
+<span style="animation-delay: 0.1s"></span>
+<span style="animation-delay: 0.1s"></span>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-bold text-white truncate">Luma (Diagnóstico)</h3>
+<span class="text-[9px] font-mono text-primary/70 uppercase">#AGT-108</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="text-[8px] font-bold bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded uppercase">Aguardando</span>
+<span class="material-symbols-outlined text-[14px] text-slate-500">bar_chart</span>
+</div>
+</div>
+<div class="glass-card rounded-2xl p-3 flex flex-col gap-2 relative transition-all hover:border-primary/50">
+<div class="flex justify-between items-start">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden agent-pulse">
+<img alt="ISA" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5pzK0olEkhkT9qjl7q3U-nXAZg0JXRXFQu9L2fR4jNmijgxr299XY73aEQDB1OXYjRS3W42au_8ZkX4XgbotQ1geRzuehQaltt1SMd32_QPn8qhNeClxrgWVqRZIXnwwpf0OwmEpGB_KNy4YzoaZn4vm7OSdvoymsZWQ1dLSabHV1fYvoneArMpM1wvwOgt40HsetjL_YFW15qhBu7pQiDA22W_217AcXn_HnTpB2C3WwVXbxKbgsfscPadgcfM2tESHW8uAi4yk"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-3 h-3 bg-emerald-accent rounded-full border-2 border-slate-950"></div>
+</div>
+<div class="flex items-end h-4 waveform text-primary">
+<span style="animation-delay: 0.2s"></span>
+<span style="animation-delay: 0.4s"></span>
+<span style="animation-delay: 0.6s"></span>
+<span style="animation-delay: 0.3s"></span>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-bold text-white truncate">ISA (Proc. SAP)</h3>
+<span class="text-[9px] font-mono text-primary/70 uppercase">#AGT-092</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="text-[8px] font-bold bg-emerald-accent/20 text-emerald-accent px-1.5 py-0.5 rounded uppercase">Executando</span>
+<span class="material-symbols-outlined text-[14px] text-slate-500">api</span>
+</div>
+</div>
+<div class="glass-card rounded-2xl p-3 flex flex-col gap-2 relative transition-all hover:border-primary/50">
+<div class="flex justify-between items-start">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img alt="ComprIA" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFp8HCAUhIbMLJR3qtJMUYnMAuBrHFIekioBmtuUTcyQzj3URWJ0kKwRSS59Rfnyace6tqj9Yo1CIVpzhwp5KpHxB4Y2fUBqfTa-CyZZ5mEdtZDhRf3THO6DPZkR5F9HwEzLbaeGndqoc2Yp-NJZYx2Bs9B6lrOaYnV-dvpvpe1iiINAg5Cd316iQhFZ948JyHy-qRptwQNzY40x0NyWWV0XJGVOaqnfNzkaHvoqq-SNH2Arud--HdsSnUysEmbHNyyL6Tt_eG7II"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-3 h-3 bg-emerald-accent rounded-full border-2 border-slate-950"></div>
+</div>
+<div class="flex items-end h-4 waveform text-emerald-accent">
+<span style="animation-delay: 0.8s"></span>
+<span style="animation-delay: 0.4s"></span>
+<span style="animation-delay: 0.5s"></span>
+<span style="animation-delay: 0.2s"></span>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-bold text-white truncate">Compr.IA</h3>
+<span class="text-[9px] font-mono text-primary/70 uppercase">#AGT-214</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<span class="text-[8px] font-bold bg-emerald-accent/20 text-emerald-accent px-1.5 py-0.5 rounded uppercase">Ativo</span>
+<span class="material-symbols-outlined text-[14px] text-slate-500">shopping_cart</span>
+</div>
+</div>
+<div class="glass-card rounded-2xl p-3 flex flex-col gap-2 opacity-60">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-600 text-xl">smart_toy</span>
+</div>
+<div class="flex items-end h-4 space-x-0.5">
+<div class="w-[2px] h-1 bg-slate-700"></div>
+<div class="w-[2px] h-1 bg-slate-700"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="h-2.5 w-16 bg-slate-800 rounded"></div>
+<div class="h-2 w-10 bg-slate-800/50 rounded"></div>
+</div>
+<div class="h-4 w-12 bg-slate-800 rounded mt-1"></div>
+</div>
+</main>
+<footer class="mt-auto border-t border-primary/20 bg-slate-950 px-4 pb-8 pt-3">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-slate-500 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<p class="text-[9px] font-medium uppercase tracking-tighter">Dashboard</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">task_alt</span>
+<p class="text-[9px] font-medium uppercase tracking-tighter">Ações</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1">hub</span>
+<p class="text-[9px] font-medium uppercase tracking-tighter">Agentes</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">account_circle</span>
+<p class="text-[9px] font-medium uppercase tracking-tighter">Perfil</p>
+</a>
+</div>
+</footer>
+
+</body></html>

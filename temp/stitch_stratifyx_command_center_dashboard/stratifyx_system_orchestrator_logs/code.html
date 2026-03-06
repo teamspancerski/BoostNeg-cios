@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StratifyX System Orchestrator Logs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d33f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#020617", // Ultra-dark Slate 950
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .crt-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            background-size: 100% 3px, 3px 100%;
+            pointer-events: none;
+            z-index: 50;
+        }
+        .log-container::-webkit-scrollbar {
+            width: 4px;
+        }
+        .log-container::-webkit-scrollbar-track {
+            background: rgba(13, 51, 242, 0.05);
+        }
+        .log-container::-webkit-scrollbar-thumb {
+            background: rgba(13, 51, 242, 0.3);
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col overflow-hidden">
+<div class="crt-overlay"></div>
+<header class="flex items-center justify-between p-4 border-b border-primary/20 bg-background-dark/80 backdrop-blur-md sticky top-0 z-40">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">arrow_back_ios</span>
+<div>
+<h1 class="text-xs font-bold tracking-widest text-primary/80 uppercase">BoostNegócios IA</h1>
+<h2 class="text-sm font-bold leading-tight">LOGS DO SISTEMA - ORQUESTRADOR</h2>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-emerald-500 animate-pulse"></div>
+<span class="text-[10px] font-mono text-emerald-500 uppercase tracking-tighter">Live Syncing</span>
+</div>
+</header>
+<main class="flex-1 flex flex-col overflow-hidden relative">
+<div class="grid grid-cols-2 gap-2 p-4 border-b border-primary/10 bg-primary/5">
+<div class="flex flex-col gap-1 rounded-lg p-3 bg-slate-900/50 border border-primary/20 backdrop-blur-sm">
+<div class="flex justify-between items-center">
+<p class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Tokens/seg</p>
+<span class="material-symbols-outlined text-emerald-400 text-xs">trending_up</span>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="text-xl font-bold font-mono">4.2k</p>
+<p class="text-[10px] text-emerald-400 font-mono">+12.4%</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-lg p-3 bg-slate-900/50 border border-primary/20 backdrop-blur-sm">
+<div class="flex justify-between items-center">
+<p class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Latência</p>
+<span class="material-symbols-outlined text-orange-400 text-xs">timer</span>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="text-xl font-bold font-mono">124<span class="text-xs font-normal">ms</span></p>
+<p class="text-[10px] text-orange-400 font-mono">-5.2%</p>
+</div>
+</div>
+</div>
+<div class="px-4 pt-4 pb-2">
+<div class="flex justify-between items-end mb-2">
+<p class="text-[10px] font-bold text-slate-500 tracking-[0.2em] uppercase">Métricas de Fluxo</p>
+<p class="text-[10px] font-mono text-primary/60 italic">Real-time sampling...</p>
+</div>
+<div class="w-full h-16 relative">
+<svg class="drop-shadow-[0_0_8px_rgba(13,51,242,0.3)]" fill="none" height="64" preserveaspectratio="none" viewbox="0 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#paint0_linear)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#0d33f2" stroke-linecap="round" stroke-width="4"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#0d33f2" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#0d33f2" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-4 font-mono text-[11px] leading-relaxed log-container bg-slate-950/40 mx-2 mb-2 rounded-xl border border-primary/10 shadow-inner">
+<div class="space-y-1.5">
+<div class="text-slate-500">[SYSTEM] Initialization sequence active...</div>
+<div class="text-slate-500">[SYSTEM] Handshaking with 252 autonomous agents...</div>
+<div class="flex gap-2">
+<span class="text-emerald-500 font-bold shrink-0">[INFO]</span>
+<span class="text-slate-400 shrink-0">14:02:10 -</span>
+<span class="text-slate-200 tracking-tight">await Orchestrator.deploy(Agent_ISA);</span>
+</div>
+<div class="flex gap-2">
+<span class="text-emerald-500 font-bold shrink-0">[INFO]</span>
+<span class="text-slate-400 shrink-0">14:02:15 -</span>
+<span class="text-emerald-400">ISA: Vendas (SP) is now online. Port: 8081</span>
+</div>
+<div class="flex gap-2">
+<span class="text-amber-500 font-bold shrink-0">[WARN]</span>
+<span class="text-slate-400 shrink-0">14:02:22 -</span>
+<span class="text-amber-200">Memory usage at 84% for Agent_Finance_01. Scaling...</span>
+</div>
+<div class="flex gap-2">
+<span class="text-emerald-500 font-bold shrink-0">[INFO]</span>
+<span class="text-slate-400 shrink-0">14:02:45 -</span>
+<span class="text-slate-100 italic">Rosie (Suporte) resolved ticket #982</span>
+</div>
+<div class="flex gap-2">
+<span class="text-red-500 font-bold shrink-0 animate-pulse">[ERR!]</span>
+<span class="text-slate-400 shrink-0">14:03:01 -</span>
+<span class="text-red-400 bg-red-500/10 px-1">NetworkTimeout: Global_Relay failed to acknowledge.</span>
+</div>
+<div class="flex gap-2">
+<span class="text-emerald-500 font-bold shrink-0">[INFO]</span>
+<span class="text-slate-400 shrink-0">14:03:02 -</span>
+<span class="text-slate-200">Retrying connection via Secondary_Node_Alpha...</span>
+</div>
+<div class="text-primary/40 pl-4 py-1 border-l border-primary/20 italic">
+                    {<br/>
+                      "id": "9x-f42",<br/>
+                      "status": "recovering",<br/>
+                      "timestamp": 1715423821000<br/>
+                    }
+                </div>
+<div class="flex gap-2">
+<span class="text-emerald-500 font-bold shrink-0">[INFO]</span>
+<span class="text-slate-400 shrink-0">14:03:15 -</span>
+<span class="text-emerald-400">System stabilized. Orchestrator load: 14%</span>
+</div>
+<div class="flex gap-2">
+<span class="text-emerald-500 font-bold shrink-0">[INFO]</span>
+<span class="text-slate-400 shrink-0">14:03:45 -</span>
+<span class="text-slate-200">Agent_Marketing_X initialized "Campaign_A_B_Test"</span>
+</div>
+<div class="flex gap-2">
+<span class="text-emerald-500 font-bold shrink-0">[INFO]</span>
+<span class="text-slate-400 shrink-0">14:04:12 -</span>
+<span class="text-slate-200">Processing batch stream [4.2k tokens/s]</span>
+</div>
+<div class="flex gap-2">
+<span class="text-emerald-500 font-bold shrink-0">[INFO]</span>
+<span class="text-slate-400 shrink-0">14:04:15 -</span>
+<span class="text-emerald-400">Agent_Legal analyzed contract #CF-9902: 0 conflicts found.</span>
+</div>
+<div class="flex gap-2">
+<span class="text-amber-500 font-bold shrink-0">[WARN]</span>
+<span class="text-slate-400 shrink-0">14:04:20 -</span>
+<span class="text-amber-200">External API 'Stripe' latency elevated (240ms)</span>
+</div>
+<div class="flex gap-2">
+<span class="text-primary font-bold shrink-0 animate-pulse">&gt;</span>
+<span class="text-primary/80 animate-pulse">_</span>
+</div>
+</div>
+</div>
+</main>
+<nav class="bg-background-dark/95 backdrop-blur-xl border-t border-primary/20 pb-safe shadow-2xl z-40">
+<div class="flex justify-around items-center h-20 px-4">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl fill-1">terminal</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Logs</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined text-2xl">smart_toy</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Agentes</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined text-2xl">monitoring</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Métricas</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined text-2xl">settings</span>
+<span class="text-[10px] font-bold uppercase tracking-wider">Config</span>
+</a>
+</div>
+</nav>
+<div class="fixed bottom-0 left-0 w-full h-[1px] bg-primary/30 z-[60]"></div>
+</body></html>

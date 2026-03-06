@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stealth Mode System Config</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3abff8",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101d23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-fill .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark border-x border-slate-200 dark:border-slate-800">
+<!-- Header -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800/50 backdrop-blur-md">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">System Configuration</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-lg size-10 bg-transparent text-slate-900 dark:text-slate-100 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Operational Mode Section -->
+<section>
+<h2 class="text-slate-900 dark:text-slate-100 text-[13px] uppercase font-bold leading-tight tracking-widest px-4 pb-3 pt-6 opacity-60">Operational Mode</h2>
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[72px] py-3 justify-between border-b border-slate-200 dark:border-slate-800/30">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-xl bg-primary/10 shrink-0 size-12">
+<span class="material-symbols-outlined text-[24px]">visibility_off</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-semibold leading-normal">Stealth Mode</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal">Minimize system footprint and trace visibility</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border-none bg-slate-300 dark:bg-slate-800 p-1 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all duration-300">
+<div class="h-full aspect-square rounded-full bg-white shadow-sm"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[72px] py-3 justify-between border-b border-slate-200 dark:border-slate-800/30">
+<div class="flex items-center gap-4">
+<div class="text-slate-500 dark:text-slate-400 flex items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-800 shrink-0 size-12">
+<span class="material-symbols-outlined text-[24px]">bolt</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-semibold leading-normal line-clamp-1">Performance Override</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal line-clamp-2">Bypass thermal limits for peak processing</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border-none bg-slate-300 dark:bg-slate-800 p-1 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all duration-300">
+<div class="h-full aspect-square rounded-full bg-white shadow-sm"></div>
+<input class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+</section>
+<!-- Resource Allocation -->
+<section>
+<h2 class="text-slate-900 dark:text-slate-100 text-[13px] uppercase font-bold leading-tight tracking-widest px-4 pb-3 pt-8 opacity-60">Resource Allocation</h2>
+<div class="px-4 py-4 space-y-6">
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300">VRAM Buffer</label>
+<span class="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded">12.4 GB / 16 GB</span>
+</div>
+<div class="h-2 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[78%] rounded-full shadow-[0_0_8px_rgba(58,191,248,0.5)]"></div>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<label class="text-sm font-medium text-slate-700 dark:text-slate-300">Token Context Window</label>
+<span class="text-xs font-mono text-slate-500 dark:text-slate-400">32k / 128k</span>
+</div>
+<div class="h-2 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-slate-400 dark:bg-slate-600 w-[25%] rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Settings -->
+<section>
+<h2 class="text-slate-900 dark:text-slate-100 text-[13px] uppercase font-bold leading-tight tracking-widest px-4 pb-3 pt-6 opacity-60">Security Protocols</h2>
+<div class="mx-4 space-y-2">
+<button class="w-full flex items-center justify-between p-4 bg-slate-100 dark:bg-slate-800/40 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500">lock_reset</span>
+<span class="text-sm font-medium">Rotation Keys</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 bg-slate-100 dark:bg-slate-800/40 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500">encrypted</span>
+<span class="text-sm font-medium">Quantum-Safe Tunneling</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold text-green-500 uppercase tracking-tighter">Active</span>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+</button>
+<button class="w-full flex items-center justify-between p-4 bg-slate-100 dark:bg-slate-800/40 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-red-500/70">destruction</span>
+<span class="text-sm font-medium text-red-500/80">Emergency Data Purge</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Info Footer -->
+<div class="p-8 text-center space-y-1">
+<p class="text-[10px] text-slate-500 uppercase tracking-[0.2em]">Build Core: 0.8.2-STABLE</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-[0.2em]">Last Sync: 02:14:55 UTC</p>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 px-6 pb-6 pt-3 z-20">
+<div class="flex items-center justify-between gap-2">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">memory</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Core</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary active-fill" href="#">
+<div class="p-2 bg-primary/10 rounded-full mb-0.5">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Config</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Admin</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

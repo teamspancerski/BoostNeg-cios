@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stealth Agent Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3abff8",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101d23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center p-4 justify-between max-w-7xl mx-auto w-full">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-tight tracking-tight">Stealth Market</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400">Secure Agent Exchange</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden border border-primary/30">
+<img alt="User Profile" data-alt="Cyberpunk style male avatar icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJJLWjroeJQbkxkvc6KiDv-OtWDhlkdiiIyEugXtfRT2QM-SqZaCUgJ4umuPBX8JvE58_lH1IaSVfw-RwDyC1dCBt9sN036DTu-Nb2iZJ5KjEG87f29PS0lNLe6m8G4jthxC6VowSAdA0Q8YhvxcYfKjhmHRp7DwHGagP9iSTozx8WcbkmUEtuOWPE89M3_P0_6qowD5taQI81nxhj7rBsRQ7n0LhwKNl6ESlyVB0ed_M30ZckUVQ43JaUE6p2lIUG8LVLMJRg6e4"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto">
+<!-- Search & Filter Area -->
+<div class="px-4 py-6 max-w-7xl mx-auto w-full">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-4 bg-slate-100 dark:bg-slate-900 border-none rounded-xl focus:ring-2 focus:ring-primary/50 text-base placeholder:text-slate-500 transition-all" placeholder="Search stealth agents, protocols, or devs..." type="text"/>
+</div>
+<div class="flex gap-2 mt-4 overflow-x-auto hide-scrollbar pb-2">
+<button class="px-4 py-1.5 rounded-full bg-primary text-white text-sm font-medium whitespace-nowrap">All Agents</button>
+<button class="px-4 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium whitespace-nowrap border border-slate-200 dark:border-slate-700">Analytics</button>
+<button class="px-4 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium whitespace-nowrap border border-slate-200 dark:border-slate-700">Trading</button>
+<button class="px-4 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium whitespace-nowrap border border-slate-200 dark:border-slate-700">Security</button>
+<button class="px-4 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium whitespace-nowrap border border-slate-200 dark:border-slate-700">Social</button>
+</div>
+</div>
+<!-- Community Highlights Carousel -->
+<section class="py-4">
+<div class="px-4 mb-4 flex items-center justify-between max-w-7xl mx-auto w-full">
+<h2 class="text-xl font-bold tracking-tight">Community Highlights</h2>
+<a class="text-primary text-sm font-semibold flex items-center gap-1" href="#">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="flex overflow-x-auto hide-scrollbar gap-4 px-4 pb-4 max-w-7xl mx-auto w-full">
+<!-- Highlight Card 1 -->
+<div class="flex-none w-72 h-40 rounded-xl overflow-hidden relative group cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Abstract blue digital network connectivity pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd-cyPdCepQBkKeVO5nNYzhPf69XgTfMxbahcEyKIt6CcJ-YXSfJV8wIVxGz7eu4NUJ-nBbb4ptL3HjOrKY6rNsLOrz9jA5tVW75okbrch9BQ4aMA2SyloPHDkdivTo3RtbYEWEQvpiWKAXPQgdKz5wwmahbQ15AQi4jIi-qxYV8kbWna2mDPCoSAOsTNx5Icx560eXJkN01ziJ3Q1F12rzkkR3ARpkvXk02FHIZD953rQ5lveLdzYHOlyMEXHVE8y9MRudXU_osM"/>
+<div class="absolute bottom-4 left-4 z-20">
+<span class="px-2 py-0.5 rounded bg-primary text-[10px] font-bold text-white uppercase tracking-wider">Top Performer</span>
+<h3 class="text-white font-bold mt-1 text-lg">Nexus Protocol v2</h3>
+</div>
+</div>
+<!-- Highlight Card 2 -->
+<div class="flex-none w-72 h-40 rounded-xl overflow-hidden relative group cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Dark gray abstract geometric flowing background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLH_DPxCnlQxuNS6Cxw4eI4nBCmrRO2m7Nknf8J5ST_QZcSXsQVzlu5qSMvFWTMx6VdSYWqSuz-eYC67IrAl2WXAH6q7xpxYitzKnAJ8VvtPPEWNCFUc213ZMZDngO2vL03SArFsmqQ8r_MPiVqNSE7eDg8aLnqwZIi2-p7l1gFZyYe0yyRluQ91JU4ZlL9bcj0lljzV6CJFOa_61GyxZySZrKkyVeGyaj0hshYkOQrygW85Mq8mtO3YX--jBUSd9JWgyLk7hT4VI"/>
+<div class="absolute bottom-4 left-4 z-20">
+<span class="px-2 py-0.5 rounded bg-purple-500 text-[10px] font-bold text-white uppercase tracking-wider">New Drop</span>
+<h3 class="text-white font-bold mt-1 text-lg">Cipher Blade AI</h3>
+</div>
+</div>
+<!-- Highlight Card 3 -->
+<div class="flex-none w-72 h-40 rounded-xl overflow-hidden relative group cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Global digital network glowing blue lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC96crdYw_dwhYV4JHBOOtCyNVjTINW5yK6eS4hY-JdMyiMyl-1TsCICd0hC02sS-SsFLILEoHk96O3JaIFp9_TmBOKChTgc0-pv4vP3Pvx-INEbJJHigz6P3WP34TpbjaNRjePp8zHzZEY_zWuPs4_jqZyMRxDzZtCqwQUnhoGcNYJbRDu3Zuke3gUlNcu934qrXeST1168r9nAveKiXzhkpk8_TitLlJQRexRakpYI1SQG8qozc13lAL0WpTj8f4AQY7sQcY6b_A"/>
+<div class="absolute bottom-4 left-4 z-20">
+<span class="px-2 py-0.5 rounded bg-emerald-500 text-[10px] font-bold text-white uppercase tracking-wider">Rising Star</span>
+<h3 class="text-white font-bold mt-1 text-lg">Ghost Sentinel</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Agent Grid -->
+<section class="px-4 py-6 max-w-7xl mx-auto w-full">
+<h2 class="text-xl font-bold tracking-tight mb-6">Discovery Grid</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Agent Card 1 -->
+<div class="glass-card rounded-xl p-5 flex flex-col gap-4 relative overflow-hidden group hover:border-primary/40 transition-all">
+<div class="absolute top-0 right-0 p-3">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary cursor-pointer transition-colors">bookmark</span>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-16 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img class="size-12" data-alt="Monochrome robotic agent avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGrmbYyxNPiGTAJgq3VmF3w7ZzzybVnGKZumQ-uNkviTMxxPCumwvs0uH3JNJgcnAIoox8Shz32GG3pXmiZVah7DUJ_rGuGJzA48iO9EEOKPcKzKL0eedBjHBqB12VqrOjVuibiR8OGmiM7dBYOPCbpIQFM4RxmD2RjlMl5WJvSY4MbU5kJtltfYCvGvSqaWJX-XdDhMHapx6ui2mVLRuEyQu8iMpbBx4e-Q7HCcrPSL4rMP6_-wPPi-ZQZT8bLvCbK2waAtb78Jg"/>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-lg">Specter-01</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="size-2 rounded-full bg-emerald-500"></span>
+<span class="text-xs text-slate-400 font-medium">98.4% Accuracy</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-slate-400 leading-relaxed">Advanced pattern recognition agent optimized for high-frequency market arbitrage and stealth liquidity pools.</p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-800">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-slate-500 font-bold">Price</span>
+<span class="text-primary font-mono font-bold">0.45 ETH</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold transition-all">Deploy Agent</button>
+</div>
+</div>
+<!-- Agent Card 2 -->
+<div class="glass-card rounded-xl p-5 flex flex-col gap-4 relative overflow-hidden group hover:border-primary/40 transition-all">
+<div class="absolute top-0 right-0 p-3">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary cursor-pointer transition-colors">bookmark</span>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-16 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img class="size-12" data-alt="Cybernetic face mask icon monochrome" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-pfexhugQbxsfQm8HioHcKgX8M0FOrh9PoJPEDCZudmEvumKOrrXAHY__oMJVkpT67dAYBNVhKJDvtYSf6hM3HbX67teJVdokb9LP4zejqg3SPbjA39lVXG8fuKCMpRjJwpXVmvJFBAz46a4-oynpmmVsu29KcAyDPn1xzkf1xiF-thjT6wHhtn6GF2FBsR3HN8cbcr6S5UMb8vLaecwq7xps2E28SEFVHjgaokjSpaj4JIrHzJuXNYm2ygYejVuhu9uOFez7hzg"/>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-lg">Shadow Leak</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="size-2 rounded-full bg-emerald-500"></span>
+<span class="text-xs text-slate-400 font-medium">92.1% Success</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-slate-400 leading-relaxed">On-chain intelligence harvester. Monitors contract deployments and whispers of upcoming private rounds.</p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-800">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-slate-500 font-bold">Price</span>
+<span class="text-primary font-mono font-bold">0.12 ETH</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold transition-all">Deploy Agent</button>
+</div>
+</div>
+<!-- Agent Card 3 -->
+<div class="glass-card rounded-xl p-5 flex flex-col gap-4 relative overflow-hidden group hover:border-primary/40 transition-all">
+<div class="absolute top-0 right-0 p-3">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary cursor-pointer transition-colors">bookmark</span>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-16 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img class="size-12" data-alt="Abstract dark star geometric shape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDih-SEBvqlDHX0g00BDJHjYX9sseU8NWwm3nm5mMARfwCaBKTXN3Ogm-gCW77lDF-VpVk15D9HPvoNvNNbYjC0a_MqwSmpLVYzSI-OVsRl7gN005KIkhSZSvOZmYr0CjDcAqmD3VJYhQibUPOuNubL_E1Pb_WzT8_ErMJE0KbfoENMU5OFVs8nLyYVrfb83a1Lmqv8uTyH_cnLsn8AFOyV2xV5DKpvwsi78hwu-oocmFnxoUx4rdqvNtgYOBYanBpY7Ntgsq-GFR8"/>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-lg">Void Walker</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="size-2 rounded-full bg-amber-500"></span>
+<span class="text-xs text-slate-400 font-medium">In Development</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-slate-400 leading-relaxed">Multi-chain privacy router. Automatically obfuscates high-value transactions across ZK-rollups.</p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-800">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-slate-500 font-bold">Price</span>
+<span class="text-primary font-mono font-bold">1.20 ETH</span>
+</div>
+<button class="bg-slate-700 text-slate-300 px-4 py-2 rounded-lg text-sm font-bold cursor-not-allowed">Pre-Order</button>
+</div>
+</div>
+<!-- Agent Card 4 -->
+<div class="glass-card rounded-xl p-5 flex flex-col gap-4 relative overflow-hidden group hover:border-primary/40 transition-all">
+<div class="absolute top-0 right-0 p-3">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary cursor-pointer transition-colors">bookmark</span>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-16 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img class="size-12" data-alt="Minimalist spiral tech icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMRul09EoayqOJweGu_nyg5qsbCMkvs3Lv4fbn9jN7gw7seYH4peAD0uS5UvhS0w-JWm3gbaN8tD0U9mNCsgzWgdoquu1BCd5I5RjzsYL2EU6E6B_u0rrWeKA0Kemkbcb6VyTQHGWcvhCR5J2d5ow4df6ftnaYMYkOjBsR-E0bv1FtxXhbf7HGyCXIjLjI9juYvT2xx-Eu2frbtf139O5njEWerRGjEpcajMSI7nZa3nPCufp8UNexwCRPJ5sk3eb57wlZbGTR0iw"/>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-lg">Vortex Shield</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="size-2 rounded-full bg-emerald-500"></span>
+<span class="text-xs text-slate-400 font-medium">99.9% Uptime</span>
+</div>
+</div>
+</div>
+<p class="text-sm text-slate-400 leading-relaxed">Anti-MEV protection layer for large swaps. Guaranteed minimal slippage and sandwich protection.</p>
+<div class="flex items-center justify-between pt-4 border-t border-slate-800">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase text-slate-500 font-bold">Price</span>
+<span class="text-primary font-mono font-bold">0.05 ETH/mo</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold transition-all">Subscribe</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom padding for nav -->
+<div class="h-24"></div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-4 pb-6 pt-3 z-50">
+<div class="max-w-md mx-auto flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-primary">explore</span>
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter">Discover</span>
+</a>
+<a class="flex flex-col items-center gap-1 group opacity-60 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">smart_toy</span>
+<span class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-tighter">My Agents</span>
+</a>
+<a class="flex flex-col items-center gap-1 group opacity-60 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">lock</span>
+<span class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-tighter">Vault</span>
+</a>
+<a class="flex flex-col items-center gap-1 group opacity-60 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">monitoring</span>
+<span class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-tighter">Activity</span>
+</a>
+<a class="flex flex-col items-center gap-1 group opacity-60 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">account_circle</span>
+<span class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-tighter">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

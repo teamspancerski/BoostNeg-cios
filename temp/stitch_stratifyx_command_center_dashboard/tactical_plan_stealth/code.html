@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3abff8",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101d23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>Stealth Mode - Tactical Action Plan</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full max-w-md mx-auto flex-col bg-background-light dark:bg-background-dark shadow-2xl overflow-x-hidden">
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 items-center justify-center rounded-lg bg-slate-200/50 dark:bg-slate-800/50">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">Tactical Plan</h2>
+<div class="flex items-center gap-1.5">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<p class="text-primary text-[10px] uppercase font-bold tracking-widest">Stealth Mode Active</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-200/50 dark:bg-slate-800/50 text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto">
+<div class="p-4 space-y-6">
+<section class="bg-slate-200/30 dark:bg-slate-800/30 rounded-xl p-4 border border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">target</span>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-semibold uppercase tracking-wider">Mission Progress</p>
+</div>
+<p class="text-primary text-lg font-bold tracking-tighter">13<span class="text-slate-400 dark:text-slate-600 font-normal">/20</span></p>
+</div>
+<div class="relative h-2.5 w-full rounded-full bg-slate-300 dark:bg-slate-700 overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-primary rounded-full transition-all duration-500 shadow-[0_0_10px_rgba(58,191,248,0.5)]" style="width: 65%;"></div>
+</div>
+<div class="mt-3 flex justify-between items-center text-[11px] text-slate-500 dark:text-slate-400 font-medium">
+<span>SECTOR 7 INFILTRATION</span>
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded">65% SYNCED</span>
+</div>
+</section>
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-bold uppercase tracking-widest px-1 border-l-2 border-primary">Critical Objectives</h3>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-600 text-sm cursor-pointer">filter_list</span>
+</div>
+<div class="space-y-2">
+<label class="group flex items-center justify-between p-4 rounded-xl bg-slate-200/20 dark:bg-slate-800/20 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="relative flex items-center">
+<input checked="" class="peer h-6 w-6 rounded border-slate-400 dark:border-slate-600 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark" type="checkbox"/>
+<span class="material-symbols-outlined absolute pointer-events-none opacity-0 peer-checked:opacity-100 text-slate-900 dark:text-slate-900 text-sm left-1">check</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-medium line-through decoration-primary decoration-2 opacity-60">Infiltrate Sector 7 perimeter</p>
+<p class="text-[10px] text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[12px]">schedule</span> Completed 04:30 AM</p>
+</div>
+</div>
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full border border-background-dark bg-slate-400 overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="Agent profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-1SGEkdo8HEuY3zYcL5NiWfGsCcSpYJIxSTOIgCNEDlVhdS6ktjJPpFowxIr7toSusqOzsDf9PeZktwjY-osBxFaT9itV20EA8r62RdJLoC3YnGJ7XWTqCkYU1cyh0ySAsUk0Fst_pLj5L_YyJRnm-lDr7H7sRlK6PyBa44IGmd8bl0hRkXLvQEh_OnFdcmpcGDxGPokHMR3ituDUNiNwswMv3smF4Rwqt5ThSLBY8ruNQxfoMVJ6mzuj7C_uJnDQ_ZDNnSc533w"/>
+</div>
+</div>
+</label>
+<label class="group flex items-center justify-between p-4 rounded-xl bg-slate-200/20 dark:bg-slate-800/20 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="relative flex items-center">
+<input checked="" class="peer h-6 w-6 rounded border-slate-400 dark:border-slate-600 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark" type="checkbox"/>
+<span class="material-symbols-outlined absolute pointer-events-none opacity-0 peer-checked:opacity-100 text-slate-900 dark:text-slate-900 text-sm left-1">check</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-medium line-through decoration-primary decoration-2 opacity-60">Disable thermal sensors</p>
+<p class="text-[10px] text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[12px]">schedule</span> Completed 05:12 AM</p>
+</div>
+</div>
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full border border-background-dark bg-slate-400 overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="Second agent profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFB2_7Rut1HayZHmeZdToD2SYqsgJ19BbVooW9SsUwEeCh0YetL70grLA084g2qlAnRMjtU29L-ZOKrIdN5fk7IdIebvpONn18Bq3y1THkgHJjzOTCPLxOUYtbX7ciUAuipqZv_uDlQaXepGT7ky1eo7PJY-DAL99UZ-PNhUrHcZnf4t5NzvG1ywVgAqOtwPFjMQ3V3JxaFIK-sTBS34k3HIhOQLob-LA4N2wI7h6mS-JhbEKVouRfG0ljh4RAq5jhHKBew9snY0w"/>
+</div>
+</div>
+</label>
+<label class="group flex items-center justify-between p-4 rounded-xl bg-primary/10 border border-primary transition-colors">
+<div class="flex items-center gap-4">
+<div class="relative flex items-center">
+<input class="peer h-6 w-6 rounded border-primary bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark" type="checkbox"/>
+<span class="material-symbols-outlined absolute pointer-events-none opacity-0 peer-checked:opacity-100 text-slate-900 dark:text-slate-900 text-sm left-1">check</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-bold tracking-tight">Establish encrypted uplink</p>
+<p class="text-[10px] text-primary flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[12px]">sensors</span> IN PROGRESS</p>
+</div>
+</div>
+<div class="flex -space-x-2">
+<div class="size-6 rounded-full border-2 border-primary bg-slate-400 overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="Third agent profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV3PzrWokfjR5Cr5uU27oqZPo_k2l2VWajZvGyv19EAVhirsZ62r23kiq45CBqXU5k2xL1it4Jiai0srst6dvzosxRVTi64zRwU88jf5_vJzYEJuWxRWBkPtQr9sy-8AxVhEeGLKNTN_at14h8djhZluXJORsICXXzafjfQvMihBhHTAH-18msZHk4p4F_fcEK6r2uMMe7yHB4D38Af4SX30oiXbNVlfJTyI7ITcIyxmYElypgXOfLDrMmzs90Q30RdcA9KXJA-Ho"/>
+</div>
+<div class="size-6 rounded-full border-2 border-primary bg-slate-400 overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="Fourth agent profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTO6KiCe1pmPp_z84PgaDpLF45c3vb-OdMK3_ipn-vXcJzc0evla9y0p5nRtpyM5lpjuTjZAHyLmd7J5nLAC26HfrvTGAKQrceclDkcicgbSTCzURfbLWw6GOsxOj_UsOCzGRFsNhW72csUtrvyYu9SEutq1sqzjyo_AbT0FIgSFNouBcaiYDsMh3kmC_kJeJ5GtrbDxmzQZZo4_Wy_5MiaW2zRFbjHvSMLkuYjY98SzVuPCsBvTpXJgwJ48jfSV1UBqULxvj9hoU"/>
+</div>
+</div>
+</label>
+<label class="group flex items-center justify-between p-4 rounded-xl bg-slate-200/20 dark:bg-slate-800/20 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="relative flex items-center">
+<input class="peer h-6 w-6 rounded border-slate-400 dark:border-slate-600 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark" type="checkbox"/>
+<span class="material-symbols-outlined absolute pointer-events-none opacity-0 peer-checked:opacity-100 text-slate-900 dark:text-slate-900 text-sm left-1">check</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 text-sm font-medium">Extraction point verification</p>
+<p class="text-[10px] text-slate-500 dark:text-slate-400 flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[12px]">pin_drop</span> QUEUED</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+</label>
+</div>
+</section>
+<section>
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-bold uppercase tracking-widest px-1 border-l-2 border-slate-600 mb-4">Tactical Intel</h3>
+<div class="relative h-40 w-full rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800">
+<div class="absolute inset-0 bg-slate-900/60 z-10"></div>
+<div class="absolute top-2 left-2 z-20 bg-primary/20 backdrop-blur-md px-2 py-1 rounded border border-primary/30">
+<p class="text-primary text-[10px] font-bold">LIVE FEED - CAM 04</p>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-20 h-20 border border-primary/30 rounded-full flex items-center justify-center">
+<div class="w-16 h-16 border-t-2 border-primary rounded-full animate-spin"></div>
+</div>
+</div>
+<img class="w-full h-full object-cover grayscale opacity-40" data-alt="Satellite map of tactical zone" data-location="Berlin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3wsF-gv4O0NtAhYyfeZNxOnVrChHAlbsXo-cmHcjG91xut3_7ArFEiupbFIW9w8NyZobCgnsHkTC7Xy5JehlewO_8Z3lTZFJ4nMI12jKr8DzzSMECFiNB7TV2hewajaFPUR3utOkJftna2Ejy_Si6gwfEUkdF9dY0UbAN3a3oNioOhBpTjr6K1DuaP7hDFzKtziqlkSgSBKF1WRcACK6rxBiESfpzbUg7pOWhCykwfRNM6sUimRgWl4XKS1WFW55V30UZw5IryVk"/>
+<div class="absolute bottom-2 right-2 z-20 flex gap-2">
+<span class="size-2 rounded-full bg-red-500 animate-pulse"></span>
+<p class="text-white text-[10px] font-mono tracking-tighter">GRID REF: 52.5200° N, 13.4050° E</p>
+</div>
+</div>
+</section>
+</div>
+<div class="h-24"></div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-4 pb-6 pt-2 z-20">
+<div class="flex gap-2">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 rounded-xl text-primary bg-primary/10 py-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">target</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Mission</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 rounded-xl text-slate-500 dark:text-slate-400 py-2" href="#">
+<span class="material-symbols-outlined">description</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Intel</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 rounded-xl text-slate-500 dark:text-slate-400 py-2" href="#">
+<span class="material-symbols-outlined">groups</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Agents</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 rounded-xl text-slate-500 dark:text-slate-400 py-2" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Settings</p>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

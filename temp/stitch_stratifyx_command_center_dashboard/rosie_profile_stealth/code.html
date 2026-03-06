@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stealth Mode - Agent Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3abff8",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101d23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="flex items-center bg-background-light dark:bg-background-dark/50 sticky top-0 z-10 backdrop-blur-md p-4 border-b border-slate-200 dark:border-slate-800 justify-between">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Stealth Agent Profile</h2>
+<div class="flex size-10 items-center justify-end">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
+</div>
+</header>
+<!-- Profile Section -->
+<div class="flex p-6 @container">
+<div class="flex w-full flex-col gap-6 items-center">
+<div class="flex gap-4 flex-col items-center">
+<div class="relative">
+<div class="bg-slate-200 dark:bg-slate-800 bg-center bg-no-repeat aspect-square bg-cover rounded-full border-4 border-primary/20 p-1" data-alt="Futuristic monochrome portrait of a female AI agent" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABkgfg_d0Bl90-yca1YcVClrBIgS8-KhwJUCdPjD5ZZcnFtD-nKUjhK-h_AazHf6bzxvgR8ifAAw1TslQy-UTHNvpXlYHbHs9zA6AM5izD9MHJe4rPvuTcclCkzuBpO5vRs_bauU5dH7DGlufAg3j57w1z9YDdyT8UAOvT8HO5xq1jMPSR7dBrmh2qeXu-RdkFLEer7VSpO0ZoG52KSzhlSnsAjmxKsQQrDr8lw4gz0mfG-lV-gnA36vcNSU_Z9HX3S8p0JZCeq9s");'>
+</div>
+<div class="absolute bottom-1 right-2 size-5 bg-green-500 rounded-full border-2 border-background-dark"></div>
+</div>
+<div class="flex flex-col items-center justify-center">
+<h1 class="text-slate-900 dark:text-slate-100 text-2xl font-bold tracking-tight text-center">Rosie Agent</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal text-center mt-1">
+<span class="text-primary">Stealth Operations</span> • ID #8294
+                        </p>
+</div>
+</div>
+<div class="flex gap-3 w-full max-w-md">
+<button class="flex-1 cursor-pointer items-center justify-center rounded-xl h-12 px-4 bg-primary text-slate-900 text-sm font-bold transition-all hover:opacity-90">
+                        Edit Metadata
+                    </button>
+<button class="size-12 flex items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Metrics Grid -->
+<div class="px-4 py-2">
+<div class="grid grid-cols-3 gap-3">
+<div class="flex flex-col gap-1 rounded-xl bg-slate-100 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 p-4 items-center text-center">
+<p class="text-primary tracking-tight text-xl font-bold">99.8%</p>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] uppercase font-bold tracking-wider">Efficiency</p>
+</div>
+<div class="flex flex-col gap-1 rounded-xl bg-slate-100 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 p-4 items-center text-center">
+<p class="text-slate-900 dark:text-slate-100 tracking-tight text-xl font-bold">1.2s</p>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] uppercase font-bold tracking-wider">Latency</p>
+</div>
+<div class="flex flex-col gap-1 rounded-xl bg-slate-100 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 p-4 items-center text-center">
+<p class="text-slate-900 dark:text-slate-100 tracking-tight text-xl font-bold">4.9/5</p>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] uppercase font-bold tracking-wider">Rating</p>
+</div>
+</div>
+</div>
+<!-- Performance Stats -->
+<div class="px-4 py-6">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold tracking-tight">System Performance</h3>
+<span class="text-xs text-primary font-bold">Live Feed</span>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-slate-500 dark:text-slate-400">Memory Utilization</span>
+<span class="text-slate-900 dark:text-slate-100">42%</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 42%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-slate-500 dark:text-slate-400">Neural Load</span>
+<span class="text-slate-900 dark:text-slate-100">78%</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full opacity-80" style="width: 78%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Activity Log -->
+<div class="px-4 pb-24">
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold tracking-tight mb-4">Recent Operations</h3>
+<div class="space-y-3">
+<div class="flex items-center gap-4 p-3 rounded-xl bg-slate-100 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">security</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Handshake Verified</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Node #9214 - Alpha Sector</p>
+</div>
+<span class="text-[10px] font-medium text-slate-400">2m ago</span>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-xl bg-slate-100 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800">
+<div class="size-10 rounded-lg bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 text-xl">database</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Data Synchronization</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Syncing 4.2GB stealth logs</p>
+</div>
+<span class="text-[10px] font-medium text-slate-400">14m ago</span>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-xl bg-slate-100 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800">
+<div class="size-10 rounded-lg bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 text-xl">terminal</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Command Execution</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Automated cleanup protocol</p>
+</div>
+<span class="text-[10px] font-medium text-slate-400">1h ago</span>
+</div>
+</div>
+</div>
+<!-- Bottom NavBar -->
+<nav class="fixed bottom-0 left-0 right-0 flex border-t border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg px-4 pb-6 pt-3 z-20">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Dash</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">insights</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Stats</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 active-tab text-primary" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Profile</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">settings_suggest</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Config</p>
+</a>
+</nav>
+</div>
+</body></html>
