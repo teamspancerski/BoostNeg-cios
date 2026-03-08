@@ -2,14 +2,8 @@ import { NextResponse } from "next/server"
 import Stripe from "stripe"
 import { prisma } from "@/lib/prisma"
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-}
-
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2024-06-20",
+  apiVersion: "2026-02-25.clover",
 })
 
 export async function POST(req: Request) {
@@ -37,21 +31,16 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: "Email not found" })
       }
 
-      // Verifica se usuário já existe
       const existingUser = await prisma.user.findUnique({
-        where: {
-          email: email
-        }
+        where: { email }
       })
 
-      // Evita duplicação
       if (!existingUser) {
 
         await prisma.user.create({
           data: {
             email: email,
             stripeId: stripeCustomerId,
-
             agents: JSON.stringify([
               "diagnostico-vendas",
               "rosie-suporte",
@@ -63,10 +52,6 @@ export async function POST(req: Request) {
         })
 
         console.log("Usuário criado:", email)
-
-      } else {
-
-        console.log("Usuário já existe:", email)
 
       }
 
