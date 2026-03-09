@@ -8,10 +8,21 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  stripeId  String
-  agents    String
-  createdAt DateTime @default(now())
+  id        String    @id @default(cuid())
+  email     String    @unique
+  stripeId  String?
+  agents    String?
+  createdAt DateTime  @default(now())
+  agentLogs AgentLog[]
 }
 
+model AgentLog {
+  id        String   @id @default(cuid())
+  userId    String
+  agent     String
+  action    String
+  result    String?
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+}
