@@ -1,47 +1,58 @@
-"use client"
+import { Suspense } from 'react'
+import { useEffect, useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 
-import { useEffect } from "react"
-import { useRouter } from "next/navigation"
-
-export default function Success() {
-
+function SuccessContent() {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-
-    const params = new URLSearchParams(window.location.search)
-    const sessionId = params.get("session_id")
-
-    if (!sessionId) return
-
-    async function login() {
-
-      const res = await fetch(`/api/session?session_id=${sessionId}`)
-      const data = await res.json()
-
-      if (!data.email) return
-
-      const login = await fetch("/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          email: data.email
-        })
-      })
-
-      if (login.ok) {
-        router.push("/dashboard")
+    const autoLogin = async () => {
+      const sessionId = searchParams.get('session_id')
+      if (!sessionId) {
+        setLoading(false)
+        return
       }
 
+      try {
+        const sessionRes = await fetch(`/api/session?session_id=${sessionId}`)
+        const sessionData = await sessionRes.json()
+        
+        if (!sessionData.email) {
+          setLoading(false)
+          return
+        }
+
+        const loginRes = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: sessionData.email })
+        })
+
+        if (loginRes.ok) {
+          router.push('/dashboard')
+        } else {
+          setLoading(false)
+        }
+      } catch (error) {
+        console.error('Login error:', error)
+        setLoading(false)
+      }
     }
 
-    login()
+    autoLogin()
+  }, [searchParams, router])
 
-  }, [])
+  if (loading) return <div>Finalizando pagamento...</div>
+  return <div><a href="/dashboard">Ir para dashboard</a></div>
+}
 
-  return <p>Finalizando pagamento...</p>
-
+export default function Success() {
+  return (
+    <Suspense fallback={<div>Carregando...</div>}>
+      <SuccessContent />
+    </Suspense>
+  )
 }
 
