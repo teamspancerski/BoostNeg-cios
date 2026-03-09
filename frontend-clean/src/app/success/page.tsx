@@ -1,62 +1,52 @@
 'use client'
-
-import { Suspense } from 'react'
 import { useEffect, useState } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
-function SuccessContent() {
+export default function Success() {
   const router = useRouter()
-  const searchParams = useSearchParams()
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const autoLogin = async () => {
-      const sessionId = searchParams.get('session_id')
-      if (!sessionId) {
-        setLoading(false)
-        return
-      }
-
-      try {
-        const sessionRes = await fetch(`/api/session?session_id=${sessionId}`)
-        const sessionData = await sessionRes.json()
-        
-        if (sessionData.email) {
-          const loginRes = await fetch('/api/login', {
+    // Pega session_id direto da URL (sem useSearchParams)
+    const url = new URL(window.location.href)
+    const sessionId = url.searchParams.get('session_id')
+    
+    if (sessionId) {
+      fetch('/api/session', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sessionId })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.token) {
+          fetch('/api/login', {
             method: 'POST',
+            credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: sessionData.email })
-          })
-
-          if (loginRes.ok) {
+            body: JSON.stringify({ token: data.token })
+          }).then(() => {
             router.push('/dashboard')
-            return
-          }
+          })
+        } else {
+          router.push('/dashboard')
         }
-        setLoading(false)
-      } catch (error) {
-        console.error('Erro login:', error)
-        setLoading(false)
-      }
+      })
+    } else {
+      router.push('/dashboard')
     }
+  }, [router])
 
-    autoLogin()
-  }, [searchParams, router])
-
-  if (loading) return <div>🔄 Finalizando pagamento e login...</div>
   return (
-    <div>
-      <p>✅ Pagamento confirmado!</p>
-      <a href="/dashboard" className="bg-blue-500 text-white px-4 py-2 rounded">Entrar no Dashboard</a>
+    <div style={{ 
+      padding: '4rem', 
+      textAlign: 'center', 
+      fontFamily: 'system-ui'
+    }}>
+      <h1>✅ Pagamento Confirmado!</h1>
+      <p>Conectando ao dashboard...</p>
     </div>
-  )
-}
-
-export default function Success() {
-  return (
-    <Suspense fallback={<div>Carregando...</div>}>
-      <SuccessContent />
-    </Suspense>
   )
 }
 
