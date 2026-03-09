@@ -9,8 +9,9 @@ datasource db {
 
 model User {
   id        String   @id @default(cuid())
-  stripeId  String   @unique
-  email     String
-  agents    String   @default("[]")
+  email     String   @unique
+  stripeId  String
+  agents    String
   createdAt DateTime @default(now())
 }
+

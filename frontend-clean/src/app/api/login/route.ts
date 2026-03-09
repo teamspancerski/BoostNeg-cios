@@ -1,7 +1,3 @@
-import { NextResponse } from 'next/server'
-import { prisma } from '@/lib/prisma'
-import { SignJWT } from 'jose'
-
 import { NextResponse } from "next/server"
 import jwt from "jsonwebtoken"
 import { prisma } from "@/lib/prisma"
@@ -15,7 +11,10 @@ export async function POST(req: Request) {
   })
 
   if (!user) {
-    return NextResponse.json({ error: "User not found" }, { status: 404 })
+    return NextResponse.json(
+      { error: "User not found" },
+      { status: 404 }
+    )
   }
 
   const token = jwt.sign(
@@ -33,6 +32,5 @@ export async function POST(req: Request) {
   })
 
   return response
-
 }
 

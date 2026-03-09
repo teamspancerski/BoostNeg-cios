@@ -11,7 +11,7 @@ export function middleware(req: any) {
 
   try {
 
-    jwt.verify(token, process.env.JWT_SECRET)
+    jwt.verify(token, process.env.JWT_SECRET!)
 
     return NextResponse.next()
 
