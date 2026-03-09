@@ -1,3 +1,5 @@
+'use client'
+
 import { Suspense } from 'react'
 import { useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
@@ -19,24 +21,21 @@ function SuccessContent() {
         const sessionRes = await fetch(`/api/session?session_id=${sessionId}`)
         const sessionData = await sessionRes.json()
         
-        if (!sessionData.email) {
-          setLoading(false)
-          return
-        }
+        if (sessionData.email) {
+          const loginRes = await fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: sessionData.email })
+          })
 
-        const loginRes = await fetch('/api/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: sessionData.email })
-        })
-
-        if (loginRes.ok) {
-          router.push('/dashboard')
-        } else {
-          setLoading(false)
+          if (loginRes.ok) {
+            router.push('/dashboard')
+            return
+          }
         }
+        setLoading(false)
       } catch (error) {
-        console.error('Login error:', error)
+        console.error('Erro login:', error)
         setLoading(false)
       }
     }
@@ -44,8 +43,13 @@ function SuccessContent() {
     autoLogin()
   }, [searchParams, router])
 
-  if (loading) return <div>Finalizando pagamento...</div>
-  return <div><a href="/dashboard">Ir para dashboard</a></div>
+  if (loading) return <div>🔄 Finalizando pagamento e login...</div>
+  return (
+    <div>
+      <p>✅ Pagamento confirmado!</p>
+      <a href="/dashboard" className="bg-blue-500 text-white px-4 py-2 rounded">Entrar no Dashboard</a>
+    </div>
+  )
 }
 
 export default function Success() {
